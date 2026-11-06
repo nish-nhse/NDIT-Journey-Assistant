@@ -1,0 +1,44 @@
+[
+  {
+    "id": "CAP-0001",
+    "name": "Access Management",
+    "journey": "Onboarding",
+    "owner": "PMO"
+  },
+  {
+    "id": "CAP-0002",
+    "name": "Dataset Onboarding",
+    "journey": "Onboarding",
+    "owner": "Core Team"
+  },
+  {
+    "id": "CAP-0003",
+    "name": "Project Setup",
+    "journey": "Business Need",
+    "owner": "PMO"
+  },
+  {
+    "id": "CAP-0004",
+    "name": "Data Ingress",
+    "journey": "Development",
+    "owner": "Engineering"
+  },
+  {
+    "id": "CAP-0005",
+    "name": "Data Validation",
+    "journey": "Self QA",
+    "owner": "Engineering"
+  },
+  {
+    "id": "CAP-0006",
+    "name": "Data Egress",
+    "journey": "Data Egress",
+    "owner": "Engineering"
+  },
+  {
+    "id": "CAP-0007",
+    "name": "Governance Management",
+    "journey": "Design Approval",
+    "owner": "IG"
+  }
+]
