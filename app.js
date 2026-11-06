@@ -1,12 +1,7 @@
-let rules = [];
-
-fetch("data/retrieval_rules.json")
-  .then(r => r.json())
-  .then(data => rules = data);
-
 function generateGuidance() {
 
-  const intent = document.getElementById("intent").value;
+  const intent =
+      document.getElementById("intent").value;
 
   const role =
       document.getElementById("role").value;
@@ -14,26 +9,60 @@ function generateGuidance() {
   const collection =
       document.getElementById("collection").value;
 
+  const service =
+      document.getElementById("service").value;
+
   const rule =
       rules.find(r => r.intent === intent);
 
   if (!rule) return;
 
   document.getElementById("results").innerHTML = `
-      <div class="result">
 
-        <h3>Guidance</h3>
+<div class="result">
 
-        <p><strong>Role:</strong> ${role}</p>
+<h3>NDIT Guidance</h3>
 
-        <p><strong>Collection:</strong> ${collection}</p>
+<p><strong>Role:</strong> ${role}</p>
 
-        <p><strong>Action:</strong> ${rule.action}</p>
+<p><strong>Collection:</strong> ${collection}</p>
 
-        <p><strong>Governance:</strong>
-            ${rule.governance.join(", ")}
-        </p>
+<p><strong>Service:</strong> ${service}</p>
 
-      </div>
-  `;
+<p><strong>Capability:</strong>
+${rule.capability || "Mapped Capability"}
+</p>
+
+<div class="governance">
+
+<strong>Governance</strong><br>
+
+${rule.governance.join(", ")}
+
+</div>
+
+<div class="next-action">
+
+<strong>Next Action</strong><br>
+
+${rule.action}
+
+</div>
+
+<div class="articles">
+
+<strong>Recommended Articles</strong>
+
+<ul>
+<li>CRDL Onboarding Guide</li>
+<li>MESH Integration Guide</li>
+<li>DSA Process</li>
+</ul>
+
+</div>
+
+</div>
+
+`;
+
 }
