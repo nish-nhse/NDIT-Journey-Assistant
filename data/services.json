@@ -1,0 +1,27 @@
+[
+  {
+    "id": "SRV-0001",
+    "name": "CRDL",
+    "description": "Reference data and dataset onboarding"
+  },
+  {
+    "id": "SRV-0002",
+    "name": "MESH",
+    "description": "Secure messaging and transfers"
+  },
+  {
+    "id": "SRV-0003",
+    "name": "PET",
+    "description": "Transfer service"
+  },
+  {
+    "id": "SRV-0004",
+    "name": "DVE",
+    "description": "Virtual environment"
+  },
+  {
+    "id": "SRV-0005",
+    "name": "Foundry",
+    "description": "Core platform"
+  }
+]
