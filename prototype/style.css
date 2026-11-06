@@ -1,0 +1,187 @@
+/* NDIT Journey Assistant MVP */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #212b32;
+}
+
+header {
+  background-color: #005eb8;
+  color: white;
+  padding: 20px 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 5px;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #003087;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #005eb8;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003087;
+}
+
+.result {
+  margin-top: 25px;
+  background: #eef5ff;
+  border-left: 6px solid #005eb8;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.result h3 {
+  margin-top: 0;
+  color: #003087;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  margin-right: 8px;
+  margin-top: 5px;
+  border-radius: 20px;
+  background: #dbeafe;
+  color: #1e3a8a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.section-title {
+  margin-top: 30px;
+  color: #003087;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 12px;
+}
+
+.journey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.journey-step {
+  background: #e8f1fb;
+  color: #003087;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.journey-step.active {
+  background: #005eb8;
+  color: white;
+}
+
+.next-action {
+  background: #dcfce7;
+  border-left: 5px solid #16a34a;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+.governance {
+  background: #fff7ed;
+  border-left: 5px solid #ea580c;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+.articles {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 6px;
+}
+
+.articles ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.articles li {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+}
