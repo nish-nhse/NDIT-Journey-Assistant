@@ -1,0 +1,36 @@
+[
+  {
+    "intent": "how-access",
+    "action": "Submit access request",
+    "governance": [
+      "Access Approval"
+    ]
+  },
+  {
+    "intent": "how-onboard",
+    "action": "Create onboarding request",
+    "governance": [
+      "DSA"
+    ]
+  },
+  {
+    "intent": "approval",
+    "action": "Start DPIA and DSA assessment",
+    "governance": [
+      "DPIA",
+      "DSA"
+    ]
+  },
+  {
+    "intent": "integration",
+    "action": "Review MESH Integration Guide",
+    "governance": []
+  },
+  {
+    "intent": "export",
+    "action": "Review Data Egress Process",
+    "governance": [
+      "Assurance"
+    ]
+  }
+]
