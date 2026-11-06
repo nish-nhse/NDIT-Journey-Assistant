@@ -1,0 +1,27 @@
+[
+  {
+    "question": "How do I get access?",
+    "intent": "how-access",
+    "capability": "Access Management"
+  },
+  {
+    "question": "How do I onboard a dataset?",
+    "intent": "how-onboard",
+    "capability": "Dataset Onboarding"
+  },
+  {
+    "question": "What approvals do I need?",
+    "intent": "approval",
+    "capability": "Governance Management"
+  },
+  {
+    "question": "How do I configure MESH?",
+    "intent": "integration",
+    "capability": "Data Ingress"
+  },
+  {
+    "question": "How do I export data?",
+    "intent": "export",
+    "capability": "Data Egress"
+  }
+]
