@@ -1,3 +1,14 @@
+let rules = [];
+
+fetch("data/retrieval_rules.json")
+  .then(response => response.json())
+  .then(data => {
+    rules = data;
+    console.log("Rules loaded:", rules);
+  })
+  .catch(error => {
+    console.error("Failed to load rules:", error);
+  });
 function generateGuidance() {
 
   const intent =
