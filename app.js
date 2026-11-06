@@ -1,6 +1,6 @@
 let rules = [];
 
-fetch("../data/retrieval_rules.json")
+fetch("/data/retrieval_rules.json")
   .then(r => r.json())
   .then(data => rules = data);
 
