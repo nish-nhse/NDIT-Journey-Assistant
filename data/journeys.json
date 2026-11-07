@@ -1,0 +1,42 @@
+[
+  {
+    "id": "JRN-001",
+    "name": "Business Need"
+  },
+  {
+    "id": "JRN-002",
+    "name": "Project Setup"
+  },
+  {
+    "id": "JRN-003",
+    "name": "Dataset Onboarding"
+  },
+  {
+    "id": "JRN-004",
+    "name": "Data Ingress"
+  },
+  {
+    "id": "JRN-005",
+    "name": "Development"
+  },
+  {
+    "id": "JRN-006",
+    "name": "Testing"
+  },
+  {
+    "id": "JRN-007",
+    "name": "Design Approval"
+  },
+  {
+    "id": "JRN-008",
+    "name": "Production Release"
+  },
+  {
+    "id": "JRN-009",
+    "name": "Data Access"
+  },
+  {
+    "id": "JRN-010",
+    "name": "Data Egress"
+  }
+]
