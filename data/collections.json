@@ -1,0 +1,58 @@
+[
+  {
+    "id": "COL-001",
+    "name": "Virtual Wards",
+    "description": "Support for virtual ward operational and analytical use cases.",
+    "owner": "Virtual Wards Team",
+    "domain": "Urgent and Emergency Care"
+  },
+  {
+    "id": "COL-002",
+    "name": "CWT",
+    "description": "Community Waiting Times datasets and analytics.",
+    "owner": "CWT Team",
+    "domain": "Community Services"
+  },
+  {
+    "id": "COL-003",
+    "name": "Cancer",
+    "description": "Cancer pathways, outcomes and performance datasets.",
+    "owner": "Cancer Programme Team",
+    "domain": "Cancer"
+  },
+  {
+    "id": "COL-004",
+    "name": "Urgent and Emergency Care",
+    "description": "UEC analytical and operational datasets.",
+    "owner": "UEC Team",
+    "domain": "Urgent and Emergency Care"
+  },
+  {
+    "id": "COL-005",
+    "name": "Elective Recovery",
+    "description": "Elective recovery datasets and reporting.",
+    "owner": "Elective Recovery Team",
+    "domain": "Planned Care"
+  },
+  {
+    "id": "COL-006",
+    "name": "Population Health",
+    "description": "Population health management datasets.",
+    "owner": "Population Health Team",
+    "domain": "Population Health"
+  },
+  {
+    "id": "COL-007",
+    "name": "Mental Health",
+    "description": "Mental health related datasets and reporting.",
+    "owner": "Mental Health Team",
+    "domain": "Mental Health"
+  },
+  {
+    "id": "COL-008",
+    "name": "Primary Care",
+    "description": "Primary care operational and analytical datasets.",
+    "owner": "Primary Care Team",
+    "domain": "Primary Care"
+  }
+]
