@@ -4,30 +4,49 @@
     "role": "Analyst",
     "collection": "Virtual Wards",
     "service": "CRDL",
-
     "capability": "Access Management",
-
-    "description": "Request read access to Virtual Wards datasets and reporting assets held within CRDL.",
-
+    "description": "Request access to Virtual Wards datasets and reporting assets within CRDL.",
     "governance": [
       "Access Approval"
     ],
-
     "steps": [
-      "Identify the required dataset",
-      "Confirm business justification",
+      "Identify required dataset",
+      "Prepare business justification",
       "Complete access request",
       "Obtain Collection Owner approval",
       "Submit request to CRDL Service Owner"
     ],
-
     "articles": [
       "CRDL Access Guide",
       "DSA Process"
     ],
-
     "owner": "Virtual Wards Team",
+    "timescale": "5-10 working days"
+  },
 
+  {
+    "intent": "how-access",
+    "role": "Data Engineer",
+    "collection": "Virtual Wards",
+    "service": "MESH",
+    "capability": "Access Management",
+    "description": "Request access to MESH services supporting Virtual Wards data exchange.",
+    "governance": [
+      "Access Approval",
+      "Security Review"
+    ],
+    "steps": [
+      "Identify required MESH endpoint",
+      "Confirm business requirement",
+      "Submit access request",
+      "Obtain collection approval",
+      "Complete security review"
+    ],
+    "articles": [
+      "MESH Integration Guide",
+      "Access Management Guide"
+    ],
+    "owner": "Platform Engineering",
     "timescale": "5-10 working days"
   },
 
@@ -36,33 +55,54 @@
     "role": "Service Manager",
     "collection": "Virtual Wards",
     "service": "CRDL",
-
     "capability": "Dataset Onboarding",
-
-    "description": "Onboard a new dataset into CRDL for use by Virtual Wards users and analytical teams.",
-
+    "description": "Onboard a new dataset into CRDL for the Virtual Wards collection.",
     "governance": [
       "DSA",
       "DPIA"
     ],
-
     "steps": [
-      "Define dataset scope",
+      "Define onboarding scope",
       "Complete onboarding request",
-      "Submit DPIA",
-      "Submit DSA",
-      "Schedule onboarding review",
+      "Complete DPIA",
+      "Complete DSA",
+      "Submit onboarding pack",
       "Complete user acceptance testing"
     ],
-
     "articles": [
       "CRDL Onboarding Guide",
       "DSA Process"
     ],
-
     "owner": "CRDL Onboarding Team",
-
     "timescale": "10-20 working days"
+  },
+
+  {
+    "intent": "how-onboard",
+    "role": "Data Engineer",
+    "collection": "Cancer",
+    "service": "Foundry",
+    "capability": "Dataset Onboarding",
+    "description": "Onboard a new Cancer dataset into Foundry for analytical and operational use.",
+    "governance": [
+      "DSA",
+      "DPIA",
+      "Security Review"
+    ],
+    "steps": [
+      "Define source data",
+      "Review schema",
+      "Configure ingestion pipeline",
+      "Obtain governance approval",
+      "Execute testing",
+      "Deploy to production"
+    ],
+    "articles": [
+      "Foundry Onboarding Guide",
+      "Data Ingress Standards"
+    ],
+    "owner": "Data Platform Team",
+    "timescale": "15-25 working days"
   },
 
   {
@@ -70,31 +110,50 @@
     "role": "Data Engineer",
     "collection": "Virtual Wards",
     "service": "MESH",
-
     "capability": "Data Ingress",
-
-    "description": "Configure inbound data ingestion using MESH.",
-
+    "description": "Configure inbound integrations using MESH.",
     "governance": [
       "Security Review"
     ],
-
     "steps": [
-      "Confirm sender and receiver details",
-      "Review MESH guidance",
-      "Create mailbox configuration",
-      "Configure automated transfer",
-      "Execute connectivity testing",
-      "Move to production"
+      "Identify sending system",
+      "Create MESH mailbox",
+      "Configure routing",
+      "Test connectivity",
+      "Validate receipt",
+      "Promote to production"
     ],
-
     "articles": [
       "MESH Integration Guide"
     ],
-
     "owner": "Platform Engineering",
-
     "timescale": "5-15 working days"
+  },
+
+  {
+    "intent": "integration",
+    "role": "Solution Architect",
+    "collection": "CWT",
+    "service": "Foundry",
+    "capability": "Data Ingress",
+    "description": "Design and govern integration architecture into Foundry.",
+    "governance": [
+      "Design Authority",
+      "Security Review"
+    ],
+    "steps": [
+      "Review architecture",
+      "Define integration pattern",
+      "Submit Design Authority review",
+      "Approve target design",
+      "Support implementation"
+    ],
+    "articles": [
+      "Integration Standards",
+      "Architecture Principles"
+    ],
+    "owner": "Architecture Team",
+    "timescale": "10-20 working days"
   },
 
   {
@@ -102,32 +161,51 @@
     "role": "Product Owner",
     "collection": "CWT",
     "service": "Foundry",
-
     "capability": "Governance Management",
-
-    "description": "Obtain governance approval for a new capability or data product.",
-
+    "description": "Obtain governance approval for a new capability, dataset or service change.",
     "governance": [
       "DPIA",
       "DSA",
       "Design Authority"
     ],
-
     "steps": [
-      "Prepare proposal",
-      "Complete governance templates",
-      "Submit DPIA review",
-      "Submit DSA review",
-      "Attend Design Authority"
+      "Prepare business case",
+      "Submit DPIA",
+      "Submit DSA",
+      "Attend Design Authority",
+      "Record approval outcome"
     ],
-
     "articles": [
+      "DSA Process",
+      "Governance Handbook"
+    ],
+    "owner": "Information Governance Team",
+    "timescale": "15-30 working days"
+  },
+
+  {
+    "intent": "approval",
+    "role": "Information Governance Lead",
+    "collection": "Cancer",
+    "service": "Foundry",
+    "capability": "Governance Management",
+    "description": "Review and approve governance requirements for Cancer services and datasets.",
+    "governance": [
+      "DPIA",
+      "DSA"
+    ],
+    "steps": [
+      "Review submission",
+      "Assess privacy impacts",
+      "Review data sharing arrangements",
+      "Approve or request changes"
+    ],
+    "articles": [
+      "DPIA Guidance",
       "DSA Process"
     ],
-
-    "owner": "Information Governance Team",
-
-    "timescale": "15-30 working days"
+    "owner": "Information Governance",
+    "timescale": "5-10 working days"
   },
 
   {
@@ -135,30 +213,46 @@
     "role": "Data Engineer",
     "collection": "Cancer",
     "service": "Foundry",
-
     "capability": "Data Egress",
-
-    "description": "Export approved datasets from the platform to authorised consumers.",
-
+    "description": "Export approved datasets from Foundry to authorised recipients.",
     "governance": [
       "Security Review",
       "Access Approval"
     ],
-
     "steps": [
-      "Confirm export purpose",
+      "Confirm legal basis",
       "Validate permissions",
-      "Complete export review",
-      "Generate extract",
-      "Record audit trail"
+      "Prepare extract",
+      "Record audit trail",
+      "Perform secure transfer"
     ],
-
     "articles": [
       "Data Egress Process"
     ],
-
     "owner": "Platform Operations",
-
     "timescale": "2-5 working days"
+  },
+
+  {
+    "intent": "export",
+    "role": "Business User",
+    "collection": "Population Health",
+    "service": "CRDL",
+    "capability": "Data Egress",
+    "description": "Request approved extracts from Population Health reporting assets.",
+    "governance": [
+      "Access Approval"
+    ],
+    "steps": [
+      "Define reporting requirement",
+      "Submit extract request",
+      "Obtain approval",
+      "Receive approved output"
+    ],
+    "articles": [
+      "Reporting Request Guide"
+    ],
+    "owner": "Population Health Team",
+    "timescale": "3-7 working days"
   }
 ]
