@@ -2,67 +2,40 @@
 <html>
 <head>
     <title>NDIT Journey Assistant</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <h1>NDIT Journey Assistant</h1>
-</header>
-
-<div class="container">
-
-<div class="card">
-<h2>What are you trying to do?</h2>
+<h1>NDIT Journey Assistant</h1>
 
 <select id="intent">
-<option value="how-access">Get Access</option>
-<option value="how-onboard">Onboard Dataset</option>
-<option value="integration">Configure Service</option>
-<option value="export">Export Data</option>
-<option value="approval">Governance Approval</option>
+    <option value="how-onboard">Onboard Dataset</option>
+    <option value="how-access">Access Dataset</option>
+    <option value="approval">Request Approval</option>
+    <option value="integration">Integration</option>
+    <option value="export">Export Data</option>
 </select>
 
 <select id="role">
-<option>Data Engineer</option>
-<option>Analyst</option>
-<option>PMO</option>
-<option>Product Manager</option>
-<option>IG Lead</option>
+    <option>Analyst</option>
+    <option>Service Manager</option>
 </select>
 
 <select id="collection">
-<option>DRS</option>
-<option>Virtual Wards</option>
-<option>HODF</option>
-<option>CWT</option>
-<option>DIDS</option>
+    <option>Virtual Wards</option>
+    <option>CWT</option>
 </select>
-<label>Service</label>
 
 <select id="service">
-
-<option>CRDL</option>
-
-<option>MESH</option>
-
-<option>PET</option>
-
-<option>DVE</option>
-
-<option>Foundry</option>
-
+    <option>MESH</option>
+    <option>CRDL</option>
+    <option>Foundry</option>
 </select>
-    
+
 <button onclick="generateGuidance()">
-Generate Guidance
+    Generate Guidance
 </button>
 
 <div id="results"></div>
-
-</div>
-
-</div>
 
 <script src="app.js"></script>
 
