@@ -1,43 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NDIT Journey Assistant</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<h1>NDIT Journey Assistant</h1>
+    <div class="header">
 
-<select id="intent">
-    <option value="how-onboard">Onboard Dataset</option>
-    <option value="how-access">Access Dataset</option>
-    <option value="approval">Request Approval</option>
-    <option value="integration">Integration</option>
-    <option value="export">Export Data</option>
-</select>
+        <img
+            src="assets/nhs-logo.png"
+            alt="NHS Logo"
+            class="nhs-logo">
 
-<select id="role">
-    <option>Analyst</option>
-    <option>Service Manager</option>
-</select>
+        <div>
+            <h1>NDIT Journey Assistant</h1>
+            <p>National Data Integration Platform</p>
+        </div>
 
-<select id="collection">
-    <option>Virtual Wards</option>
-    <option>CWT</option>
-</select>
+    </div>
 
-<select id="service">
-    <option>MESH</option>
-    <option>CRDL</option>
-    <option>Foundry</option>
-</select>
+    <div class="container">
 
-<button onclick="generateGuidance()">
-    Generate Guidance
-</button>
+        <h2>Find Guidance</h2>
 
-<div id="results"></div>
+        <label for="intent">What do you need to do?</label>
 
-<script src="app.js"></script>
+        <select id="intent">
+
+            <option value="how-onboard">
+                Onboard Dataset
+            </option>
+
+            <option value="how-access">
+                Access Dataset
+            </option>
+
+            <option value="approval">
+                Request Approval
+            </option>
+
+            <option value="integration">
+                Integration
+            </option>
+
+            <option value="export">
+                Export Data
+            </option>
+
+        </select>
+
+        <label for="role">Role</label>
+
+        <select id="role">
+
+            <option value="Analyst">
+                Analyst
+            </option>
+
+            <option value="Service Manager">
+                Service Manager
+            </option>
+
+            <option value="Developer">
+                Developer
+            </option>
+
+        </select>
+
+        <label for="collection">Collection</label>
+
+        <select id="collection">
+
+            <option value="Virtual Wards">
+                Virtual Wards
+            </option>
+
+            <option value="CWT">
+                CWT
+            </option>
+
+            <option value="Cancer">
+                Cancer
+            </option>
+
+        </select>
+
+        <label for="service">Service</label>
+
+        <select id="service">
+
+            <option value="CRDL">
+                CRDL
+            </option>
+
+            <option value="MESH">
+                MESH
+            </option>
+
+            <option value="PET">
+                PET
+            </option>
+
+            <option value="DVE">
+                DVE
+            </option>
+
+            <option value="Foundry">
+                Foundry
+            </option>
+
+        </select>
+
+        <button
+            type="button"
+            onclick="generateGuidance()">
+
+            Generate Guidance
+
+        </button>
+
+        <div id="results"></div>
+
+    </div>
+
+    <script src="app.js"></script>
 
 </body>
+
 </html>
