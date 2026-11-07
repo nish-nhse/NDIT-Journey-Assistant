@@ -1,5 +1,6 @@
 let rules = [];
 
+// Load rules
 fetch("data/retrieval_rules.json")
   .then(response => response.json())
   .then(data => {
@@ -9,71 +10,68 @@ fetch("data/retrieval_rules.json")
   .catch(error => {
     console.error("Failed to load rules:", error);
   });
+
 function generateGuidance() {
 
-  const intent =
-      document.getElementById("intent").value;
+  const intent = document.getElementById("intent").value;
+  const role = document.getElementById("role").value;
+  const collection = document.getElementById("collection").value;
+  const service = document.getElementById("service").value;
 
-  const role =
-      document.getElementById("role").value;
+  console.log("Selected intent:", intent);
 
-  const collection =
-      document.getElementById("collection").value;
+  const rule = rules.find(r => r.intent === intent);
 
-  const service =
-      document.getElementById("service").value;
+  console.log("Matched rule:", rule);
 
-  const rule =
-      rules.find(r => r.intent === intent);
-
-  if (!rule) return;
+  if (!rule) {
+    document.getElementById("results").innerHTML = `
+      <div class="result">
+        <h3>No matching guidance found</h3>
+        <p>
+          Intent selected: <strong>${intent}</strong>
+        </p>
+      </div>
+    `;
+    return;
+  }
 
   document.getElementById("results").innerHTML = `
+    <div class="result">
 
-<div class="result">
+      <h3>NDIT Guidance</h3>
 
-<h3>NDIT Guidance</h3>
+      <p><strong>Role:</strong> ${role}</p>
 
-<p><strong>Role:</strong> ${role}</p>
+      <p><strong>Collection:</strong> ${collection}</p>
 
-<p><strong>Collection:</strong> ${collection}</p>
+      <p><strong>Service:</strong> ${service}</p>
 
-<p><strong>Service:</strong> ${service}</p>
+      <p><strong>Capability:</strong> ${rule.capability}</p>
 
-<p><strong>Capability:</strong>
-${rule.capability || "Mapped Capability"}
-</p>
+      <div class="governance">
+        <strong>Governance</strong><br>
+        ${rule.governance.join(", ")}
+      </div>
 
-<div class="governance">
+      <br>
 
-<strong>Governance</strong><br>
+      <div class="next-action">
+        <strong>Next Action</strong><br>
+        ${rule.action}
+      </div>
 
-${rule.governance.join(", ")}
+      <br>
 
-</div>
+      <div class="articles">
+        <strong>Recommended Articles</strong>
+        <ul>
+          <li>CRDL Onboarding Guide</li>
+          <li>MESH Integration Guide</li>
+          <li>DSA Process</li>
+        </ul>
+      </div>
 
-<div class="next-action">
-
-<strong>Next Action</strong><br>
-
-${rule.action}
-
-</div>
-
-<div class="articles">
-
-<strong>Recommended Articles</strong>
-
-<ul>
-<li>CRDL Onboarding Guide</li>
-<li>MESH Integration Guide</li>
-<li>DSA Process</li>
-</ul>
-
-</div>
-
-</div>
-
-`;
-
+    </div>
+  `;
 }
