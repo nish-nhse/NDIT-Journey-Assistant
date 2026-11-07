@@ -1,6 +1,6 @@
 [
   {
-    "intent": "Onboard Dataset",
+    "intent": "how-onboard",
     "capability": "Dataset Onboarding",
     "action": "Create onboarding request",
     "governance": [
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "intent": "Access Dataset",
+    "intent": "how-access",
     "capability": "Access Management",
     "action": "Submit access request",
     "governance": [
@@ -17,7 +17,7 @@
     ]
   },
   {
-    "intent": "Request Approval",
+    "intent": "approval",
     "capability": "Governance Approval",
     "action": "Start DPIA and DSA assessment",
     "governance": [
@@ -26,13 +26,13 @@
     ]
   },
   {
-    "intent": "Integration",
+    "intent": "integration",
     "capability": "Technical Integration",
     "action": "Review MESH Integration Guide",
     "governance": []
   },
   {
-    "intent": "Export Data",
+    "intent": "export",
     "capability": "Data Egress",
     "action": "Review Data Egress Process",
     "governance": [
