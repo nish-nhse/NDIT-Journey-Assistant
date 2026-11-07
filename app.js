@@ -1,6 +1,6 @@
 let rules = [];
 
-// Load rules from JSON
+// Load rules
 fetch("data/retrieval_rules.json")
   .then(response => response.json())
   .then(data => {
@@ -13,67 +13,115 @@ fetch("data/retrieval_rules.json")
 
 function generateGuidance() {
 
-  console.log("Button clicked");
-
   const intent = document.getElementById("intent").value;
   const role = document.getElementById("role").value;
   const collection = document.getElementById("collection").value;
   const service = document.getElementById("service").value;
 
-  console.log("Selected intent:", intent);
+  console.log("Selected Intent:", intent);
+  console.log("Selected Role:", role);
+  console.log("Selected Collection:", collection);
+  console.log("Selected Service:", service);
 
-  const rule = rules.find(r => r.intent === intent);
-
-  console.log("Matched rule:", rule);
+  const rule = rules.find(r =>
+      r.intent === intent &&
+      r.role === role &&
+      r.collection === collection &&
+      r.service === service
+  );
 
   const resultsDiv = document.getElementById("results");
 
   if (!rule) {
+
     resultsDiv.innerHTML = `
       <div class="result">
-        <h3>No matching guidance found</h3>
-        <p><strong>Intent selected:</strong> ${intent}</p>
+
+        <h3>No Matching Guidance Found</h3>
+
+        <p>
+          We do not yet have guidance for:
+        </p>
+
+        <ul>
+          <li><strong>Intent:</strong> ${intent}</li>
+          <li><strong>Role:</strong> ${role}</li>
+          <li><strong>Collection:</strong> ${collection}</li>
+          <li><strong>Service:</strong> ${service}</li>
+        </ul>
+
+        <p>
+          Add a matching rule to retrieval_rules.json.
+        </p>
+
       </div>
     `;
+
     return;
   }
 
   resultsDiv.innerHTML = `
+
     <div class="result">
 
-      <h3>NDIT Guidance</h3>
+      <h2>NDIT Guidance</h2>
 
-      <p><strong>Role:</strong> ${role}</p>
+      <p>
+        <strong>Role:</strong> ${role}
+      </p>
 
-      <p><strong>Collection:</strong> ${collection}</p>
+      <p>
+        <strong>Collection:</strong> ${collection}
+      </p>
 
-      <p><strong>Service:</strong> ${service}</p>
+      <p>
+        <strong>Service:</strong> ${service}
+      </p>
 
-      <p><strong>Capability:</strong> ${rule.capability}</p>
+      <p>
+        <strong>Capability:</strong> ${rule.capability}
+      </p>
 
-      <div class="governance">
-        <strong>Governance</strong><br>
-        ${rule.governance.join(", ")}
-      </div>
+      <p>
+        <strong>Description:</strong><br>
+        ${rule.description}
+      </p>
 
-      <br>
+      <p>
+        <strong>Owner:</strong><br>
+        ${rule.owner}
+      </p>
 
-      <div class="next-action">
-        <strong>Next Action</strong><br>
-        ${rule.action}
-      </div>
+      <p>
+        <strong>Timescale:</strong><br>
+        ${rule.timescale}
+      </p>
 
-      <br>
+      <h3>Governance Requirements</h3>
 
-      <div class="articles">
-        <strong>Recommended Articles</strong>
-        <ul>
-          <li>CRDL Onboarding Guide</li>
-          <li>MESH Integration Guide</li>
-          <li>DSA Process</li>
-        </ul>
-      </div>
+      <ul>
+        ${rule.governance.map(item =>
+          `<li>${item}</li>`
+        ).join("")}
+      </ul>
+
+      <h3>Required Steps</h3>
+
+      <ol>
+        ${rule.steps.map(step =>
+          `<li>${step}</li>`
+        ).join("")}
+      </ol>
+
+      <h3>Knowledge Articles</h3>
+
+      <ul>
+        ${rule.articles.map(article =>
+          `<li>${article}</li>`
+        ).join("")}
+      </ul>
 
     </div>
+
   `;
 }
