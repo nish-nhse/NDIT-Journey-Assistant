@@ -1,0 +1,34 @@
+[
+  {
+    "id": "PER-001",
+    "name": "Analyst"
+  },
+  {
+    "id": "PER-002",
+    "name": "Data Engineer"
+  },
+  {
+    "id": "PER-003",
+    "name": "Developer"
+  },
+  {
+    "id": "PER-004",
+    "name": "Service Manager"
+  },
+  {
+    "id": "PER-005",
+    "name": "Product Owner"
+  },
+  {
+    "id": "PER-006",
+    "name": "Solution Architect"
+  },
+  {
+    "id": "PER-007",
+    "name": "Information Governance Lead"
+  },
+  {
+    "id": "PER-008",
+    "name": "Business User"
+  }
+]
