@@ -1,42 +1,164 @@
 [
   {
+    "intent": "how-access",
+    "role": "Analyst",
+    "collection": "Virtual Wards",
+    "service": "CRDL",
+
+    "capability": "Access Management",
+
+    "description": "Request read access to Virtual Wards datasets and reporting assets held within CRDL.",
+
+    "governance": [
+      "Access Approval"
+    ],
+
+    "steps": [
+      "Identify the required dataset",
+      "Confirm business justification",
+      "Complete access request",
+      "Obtain Collection Owner approval",
+      "Submit request to CRDL Service Owner"
+    ],
+
+    "articles": [
+      "CRDL Access Guide",
+      "DSA Process"
+    ],
+
+    "owner": "Virtual Wards Team",
+
+    "timescale": "5-10 working days"
+  },
+
+  {
     "intent": "how-onboard",
+    "role": "Service Manager",
+    "collection": "Virtual Wards",
+    "service": "CRDL",
+
     "capability": "Dataset Onboarding",
-    "action": "Create onboarding request",
+
+    "description": "Onboard a new dataset into CRDL for use by Virtual Wards users and analytical teams.",
+
     "governance": [
       "DSA",
       "DPIA"
-    ]
+    ],
+
+    "steps": [
+      "Define dataset scope",
+      "Complete onboarding request",
+      "Submit DPIA",
+      "Submit DSA",
+      "Schedule onboarding review",
+      "Complete user acceptance testing"
+    ],
+
+    "articles": [
+      "CRDL Onboarding Guide",
+      "DSA Process"
+    ],
+
+    "owner": "CRDL Onboarding Team",
+
+    "timescale": "10-20 working days"
   },
-  {
-    "intent": "how-access",
-    "capability": "Access Management",
-    "action": "Submit access request",
-    "governance": [
-      "Access Approval"
-    ]
-  },
-  {
-    "intent": "approval",
-    "capability": "Governance Approval",
-    "action": "Start DPIA and DSA assessment",
-    "governance": [
-      "DPIA",
-      "DSA"
-    ]
-  },
+
   {
     "intent": "integration",
-    "capability": "Technical Integration",
-    "action": "Review MESH Integration Guide",
-    "governance": []
+    "role": "Data Engineer",
+    "collection": "Virtual Wards",
+    "service": "MESH",
+
+    "capability": "Data Ingress",
+
+    "description": "Configure inbound data ingestion using MESH.",
+
+    "governance": [
+      "Security Review"
+    ],
+
+    "steps": [
+      "Confirm sender and receiver details",
+      "Review MESH guidance",
+      "Create mailbox configuration",
+      "Configure automated transfer",
+      "Execute connectivity testing",
+      "Move to production"
+    ],
+
+    "articles": [
+      "MESH Integration Guide"
+    ],
+
+    "owner": "Platform Engineering",
+
+    "timescale": "5-15 working days"
   },
+
+  {
+    "intent": "approval",
+    "role": "Product Owner",
+    "collection": "CWT",
+    "service": "Foundry",
+
+    "capability": "Governance Management",
+
+    "description": "Obtain governance approval for a new capability or data product.",
+
+    "governance": [
+      "DPIA",
+      "DSA",
+      "Design Authority"
+    ],
+
+    "steps": [
+      "Prepare proposal",
+      "Complete governance templates",
+      "Submit DPIA review",
+      "Submit DSA review",
+      "Attend Design Authority"
+    ],
+
+    "articles": [
+      "DSA Process"
+    ],
+
+    "owner": "Information Governance Team",
+
+    "timescale": "15-30 working days"
+  },
+
   {
     "intent": "export",
+    "role": "Data Engineer",
+    "collection": "Cancer",
+    "service": "Foundry",
+
     "capability": "Data Egress",
-    "action": "Review Data Egress Process",
+
+    "description": "Export approved datasets from the platform to authorised consumers.",
+
     "governance": [
-      "Assurance"
-    ]
+      "Security Review",
+      "Access Approval"
+    ],
+
+    "steps": [
+      "Confirm export purpose",
+      "Validate permissions",
+      "Complete export review",
+      "Generate extract",
+      "Record audit trail"
+    ],
+
+    "articles": [
+      "Data Egress Process"
+    ],
+
+    "owner": "Platform Operations",
+
+    "timescale": "2-5 working days"
   }
 ]
