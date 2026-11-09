@@ -42,28 +42,66 @@ function detectIntent(question) {
 
     const text = question.toLowerCase();
 
-    if (text.includes("onboard")) {
+    // Onboarding
+
+    if (
+        text.includes("onboard") ||
+        text.includes("ingest") ||
+        text.includes("new dataset")
+    ) {
         return "how-onboard";
     }
 
-    if (text.includes("access")) {
+    // Access
+
+    if (
+        text.includes("access") ||
+        text.includes("permission") ||
+        text.includes("authorisation") ||
+        text.includes("authorization")
+    ) {
         return "how-access";
     }
 
-    if (text.includes("approval")) {
+    // Governance
+
+    if (
+        text.includes("approval") ||
+        text.includes("approve") ||
+        text.includes("dpia") ||
+        text.includes("dsa") ||
+        text.includes("governance")
+    ) {
         return "approval";
     }
 
-    if (text.includes("mesh")) {
+    // Integration
+
+    if (
+        text.includes("integrate") ||
+        text.includes("integration") ||
+        text.includes("mesh") ||
+        text.includes("pet") ||
+        text.includes("crdl") ||
+        text.includes("foundry") ||
+        text.includes("dve")
+    ) {
         return "integration";
     }
 
-    if (text.includes("export")) {
+    // Export
+
+    if (
+        text.includes("export") ||
+        text.includes("extract") ||
+        text.includes("egress")
+    ) {
         return "export";
     }
 
     return null;
 }
+
 
 // -----------------------------------
 // QUESTION ANALYSIS
