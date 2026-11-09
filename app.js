@@ -153,49 +153,60 @@ function detectService(question) {
 // ANALYSE QUESTION
 // -----------------------------------
 
-function analyseQuestion() {
+function findAndRenderGuidance() {
 
-    const question =
-        document.getElementById("question").value;
+    const matchedRule =
+        rules.find(r =>
 
-    if (!question) {
-        alert("Please enter a question");
-        return;
-    }
+            r.intent === conversationState.intent &&
+            r.role === conversationState.role &&
+            r.collection === conversationState.collection &&
+            r.service === conversationState.service
 
-    const intent =
-        detectIntent(question);
-
-    const collection =
-        detectCollection(question);
-
-    const service =
-        detectService(question);
-
-    console.log("Intent:", intent);
-    console.log("Collection:", collection);
-    console.log("Service:", service);
-
-    if (!intent) {
-
-        alert(
-            "Could not determine intent from your question."
         );
 
+    if (!matchedRule) {
+
+        document.getElementById("results").innerHTML = `
+            <div class="result">
+
+                <h2>
+                    No Guidance Found
+                </h2>
+
+                <p>
+
+                    I understood:
+
+                </p>
+
+                <ul>
+
+                    <li>
+                        Intent:
+                        ${conversationState.intent}
+                    </li>
+
+                    <li>
+                        Collection:
+                        ${conversationState.collection}
+                    </li>
+
+                    <li>
+                        Service:
+                        ${conversationState.service}
+                    </li>
+
+                </ul>
+
+            </div>
+        `;
+
         return;
     }
 
-    document.getElementById("intent").value = intent;
-
-    if (collection) {
-        document.getElementById("collection").value =
-            collection;
-    }
-
-    if (service) {
-        document.getElementById("service").value =
-            service;
-    }
+    renderGuidance(matchedRule);
+}
 
     generateGuidance();
 }
