@@ -22,7 +22,7 @@
         <div class="header-content">
 
             <img
-                src="assets/nhs-logo.png"
+                src="assets/NHS 10mm -RGB Blue.jpg"
                 alt="NHS Logo"
                 class="nhs-logo">
 
@@ -42,151 +42,204 @@
     </header>
 
     <main class="container">
-<section class="search-panel">
 
-    <h2>NDIT Journey Assistant</h2>
+        <section class="search-panel">
 
-    <p>
-        Select your role and describe what you need help with.
-        The assistant will determine the most appropriate
-        journey, capability, service and governance requirements.
-    </p>
+            <h2>NDIT Journey Assistant</h2>
 
-    <label for="role">
-        How are you using NDIT today?
-    </label>
+            <p>
+                Select your role and ask a question.
+                The assistant will determine the most relevant
+                capability, service, collection and governance guidance.
+            </p>
 
-    <select id="role">
+            <label for="role">
+                How are you using NDIT today?
+            </label>
 
-        <option value="Analyst">
-            Analyst
-        </option>
+            <select id="role">
 
-        <option value="Data Engineer">
-            Data Engineer
-        </option>
+                <option value="Analyst">
+                    Analyst
+                </option>
 
-        <option value="Developer">
-            Developer
-        </option>
+                <option value="Data Engineer">
+                    Data Engineer
+                </option>
 
-        <option value="Service Manager">
-            Service Manager
-        </option>
+                <option value="Developer">
+                    Developer
+                </option>
 
-        <option value="Product Owner">
-            Product Owner
-        </option>
+                <option value="Service Manager">
+                    Service Manager
+                </option>
 
-        <option value="Solution Architect">
-            Solution Architect
-        </option>
+                <option value="Product Owner">
+                    Product Owner
+                </option>
 
-        <option value="Information Governance Lead">
-            Information Governance Lead
-        </option>
+                <option value="Solution Architect">
+                    Solution Architect
+                </option>
 
-        <option value="Business User">
-            Business User
-        </option>
+                <option value="Information Governance Lead">
+                    Information Governance Lead
+                </option>
 
-    </select>
+                <option value="Business User">
+                    Business User
+                </option>
 
-    <label for="question">
-        What would you like help with?
-    </label>
+            </select>
 
-    <textarea
-        id="question"
-        rows="4"
-        placeholder="Example: I need to onboard a Cancer dataset into Foundry">
-    </textarea>
+            <label for="question">
+                What would you like help with?
+            </label>
 
-    <button
-        type="button"
-        onclick="analyseQuestion()">
+            <textarea
+                id="question"
+                rows="4"
+                placeholder="Example: I need to onboard a Cancer dataset into Foundry">
+            </textarea>
 
-        Analyse Question
+            <button
+                type="button"
+                onclick="analyseQuestion()">
 
-    </button>
+                Analyse Question
 
-    <!-- Hidden debugging controls -->
+            </button>
 
-    <div class="hidden-debug">
+            <!-- Hidden Routing Controls -->
 
-        <select id="intent">
+            <div class="hidden-debug">
 
-            <option value="how-onboard">
-                Onboard Dataset
-            </option>
+                <select id="intent">
 
-            <option value="how-access">
-                Access Dataset
-            </option>
+                    <option value="how-onboard">
+                        Onboard Dataset
+                    </option>
 
-            <option value="approval">
-                Request Approval
-            </option>
+                    <option value="how-access">
+                        Access Dataset
+                    </option>
 
-            <option value="integration">
-                Integrate Service
-            </option>
+                    <option value="approval">
+                        Request Approval
+                    </option>
 
-            <option value="export">
-                Export Data
-            </option>
+                    <option value="integration">
+                        Integrate Service
+                    </option>
 
-        </select>
+                    <option value="export">
+                        Export Data
+                    </option>
 
-        <select id="collection">
+                </select>
 
-            <option value="Virtual Wards">
-                Virtual Wards
-            </option>
+                <select id="collection">
 
-            <option value="CWT">
-                CWT
-            </option>
+                    <option value="Virtual Wards">
+                        Virtual Wards
+                    </option>
 
-            <option value="Cancer">
-                Cancer
-            </option>
+                    <option value="CWT">
+                        CWT
+                    </option>
 
-            <option value="Urgent and Emergency Care">
-                Urgent and Emergency Care
-            </option>
+                    <option value="Cancer">
+                        Cancer
+                    </option>
 
-            <option value="Elective Recovery">
-                Elective Recovery
-            </option>
+                    <option value="Urgent and Emergency Care">
+                        Urgent and Emergency Care
+                    </option>
 
-            <option value="Population Health">
-                Population Health
-            </option>
+                    <option value="Elective Recovery">
+                        Elective Recovery
+                    </option>
 
-            <option value="Mental Health">
-                Mental Health
-            </option>
+                    <option value="Population Health">
+                        Population Health
+                    </option>
 
-            <option value="Primary Care">
-                Primary Care
-            </option>
+                    <option value="Mental Health">
+                        Mental Health
+                    </option>
 
-        </select>
+                    <option value="Primary Care">
+                        Primary Care
+                    </option>
 
-        <select id="service">
+                </select>
 
-            <option value="CRDL">CRDL</option>
-            <option value="MESH">MESH</option>
-            <option value="PET">PET</option>
-            <option value="DVE">DVE</option>
-            <option value="Foundry">Foundry</option>
+                <select id="service">
 
-        </select>
+                    <option value="CRDL">
+                        CRDL
+                    </option>
 
-    </div>
+                    <option value="MESH">
+                        MESH
+                    </option>
 
-</section>
+                    <option value="PET">
+                        PET
+                    </option>
+
+                    <option value="DVE">
+                        DVE
+                    </option>
+
+                    <option value="Foundry">
+                        Foundry
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- RESULTS SECTION -->
+
+        <section id="results">
+
+            <div class="placeholder">
+
+                <h3>Welcome</h3>
+
+                <p>
+                    Ask a question to receive guidance.
+                </p>
+
+                <p>
+                    Guidance will include:
+                </p>
+
+                <ul>
+
+                    <li>Journey Stage</li>
+
+                    <li>Capability</li>
+
+                    <li>Governance Requirements</li>
+
+                    <li>Required Steps</li>
+
+                    <li>Knowledge Articles</li>
+
+                    <li>Service Owner</li>
+
+                    <li>Expected Timescales</li>
+
+                </ul>
+
+            </div>
+
+        </section>
 
     </main>
 
