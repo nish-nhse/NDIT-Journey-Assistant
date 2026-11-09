@@ -1,14 +1,82 @@
 [
   {
-    "title":"CRDL Onboarding Guide",
-    "capability":"Dataset Onboarding"
+    "id": "ART-001",
+    "title": "CRDL Onboarding Guide",
+    "capability": "Dataset Onboarding",
+    "service": "CRDL",
+    "owner_team": "Data Platform Team",
+    "description": "Guidance for onboarding datasets into CRDL."
   },
   {
-    "title":"DSA Process",
-    "capability":"Governance Management"
+    "id": "ART-002",
+    "title": "DSA Process",
+    "capability": "Governance Management",
+    "service": "CRDL",
+    "owner_team": "Information Governance Team",
+    "description": "Guidance for completing Data Sharing Agreements."
   },
   {
-    "title":"MESH Integration Guide",
-    "capability":"Data Ingress"
+    "id": "ART-003",
+    "title": "MESH Integration Guide",
+    "capability": "Data Ingress",
+    "service": "MESH",
+    "owner_team": "Platform Engineering",
+    "description": "Guidance for integrating systems using MESH."
+  },
+  {
+    "id": "ART-004",
+    "title": "Foundry Onboarding Guide",
+    "capability": "Dataset Onboarding",
+    "service": "Foundry",
+    "owner_team": "Data Platform Team",
+    "description": "Guidance for onboarding datasets into Foundry."
+  },
+  {
+    "id": "ART-005",
+    "title": "Data Ingress Standards",
+    "capability": "Data Ingress",
+    "service": "Foundry",
+    "owner_team": "Platform Engineering",
+    "description": "Data ingestion standards and implementation guidance."
+  },
+  {
+    "id": "ART-006",
+    "title": "Data Egress Process",
+    "capability": "Data Egress",
+    "service": "Foundry",
+    "owner_team": "Service Operations",
+    "description": "Approved process for exporting data from the platform."
+  },
+  {
+    "id": "ART-007",
+    "title": "Access Management Guide",
+    "capability": "Access Management",
+    "service": "CRDL",
+    "owner_team": "Information Governance Team",
+    "description": "Access request and approval guidance."
+  },
+  {
+    "id": "ART-008",
+    "title": "Governance Handbook",
+    "capability": "Governance Management",
+    "service": "Foundry",
+    "owner_team": "Information Governance Team",
+    "description": "Overview of governance activities, approvals and responsibilities."
+  },
+  {
+    "id": "ART-009",
+    "title": "Integration Standards",
+    "capability": "Data Ingress",
+    "service": "Foundry",
+    "owner_team": "Architecture Team",
+    "description": "Standards and patterns for platform integrations."
+  },
+  {
+    "id": "ART-010",
+    "title": "Architecture Principles",
+    "capability": "Data Ingress",
+    "service": "Foundry",
+    "owner_team": "Architecture Team",
+    "description": "Enterprise architecture principles and approved design patterns."
   }
 ]
