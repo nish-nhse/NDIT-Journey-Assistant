@@ -4,9 +4,22 @@ let articles = [];
 let services = [];
 let collections = [];
 
-// -----------------------------------
+// ====================================
+// CONVERSATION STATE
+// ====================================
+
+let conversationState = {
+    role: null,
+    intent: null,
+    collection: null,
+    service: null,
+    waitingForCollection: false,
+    waitingForService: false
+};
+
+// ====================================
 // LOAD DATA
-// -----------------------------------
+// ====================================
 
 Promise.all([
     fetch("data/retrieval_rules.json").then(r => r.json()),
@@ -30,10 +43,9 @@ Promise.all([
     console.error("Failed to load data:", error);
 });
 
-
-// -----------------------------------
+// ====================================
 // INTENT DETECTION
-// -----------------------------------
+// ====================================
 
 function detectIntent(question) {
 
@@ -42,7 +54,7 @@ function detectIntent(question) {
     if (
         text.includes("onboard") ||
         text.includes("ingest") ||
-        text.includes("new dataset")
+        text.includes("dataset")
     ) {
         return "how-onboard";
     }
@@ -67,9 +79,9 @@ function detectIntent(question) {
         text.includes("integrate") ||
         text.includes("integration") ||
         text.includes("mesh") ||
+        text.includes("foundry") ||
         text.includes("crdl") ||
         text.includes("pet") ||
-        text.includes("foundry") ||
         text.includes("dve")
     ) {
         return "integration";
@@ -85,10 +97,9 @@ function detectIntent(question) {
     return null;
 }
 
-
-// -----------------------------------
+// ====================================
 // COLLECTION DETECTION
-// -----------------------------------
+// ====================================
 
 function detectCollection(question) {
 
@@ -109,22 +120,21 @@ function detectCollection(question) {
     if (text.includes("primary care"))
         return "Primary Care";
 
+    if (text.includes("cwt"))
+        return "CWT";
+
     if (text.includes("elective recovery"))
         return "Elective Recovery";
 
     if (text.includes("urgent"))
         return "Urgent and Emergency Care";
 
-    if (text.includes("cwt"))
-        return "CWT";
-
     return null;
 }
 
-
-// -----------------------------------
+// ====================================
 // SERVICE DETECTION
-// -----------------------------------
+// ====================================
 
 function detectService(question) {
 
@@ -148,43 +158,304 @@ function detectService(question) {
     return null;
 }
 
+// ====================================
+// HELPER FUNCTIONS
+// ====================================
 
-// -----------------------------------
-// ANALYSE QUESTION
-// -----------------------------------
+function getRelatedItems(capabilityName) {
+
+    return relationships.filter(r =>
+        r.source_name === capabilityName ||
+        r.target_name === capabilityName
+    );
+
+}
+
+function getArticles(capabilityName) {
+
+    return articles.filter(a =>
+        a.capability === capabilityName
+    );
+
+}
+
+// ====================================
+// MAIN CONVERSATION
+// ====================================
+
+function analyseQuestion() {
+
+    const question =
+        document.getElementById("question")
+            .value
+            .trim();
+
+    const role =
+        document.getElementById("role").value;
+
+    const resultsDiv =
+        document.getElementById("results");
+
+    if (!question) {
+
+        resultsDiv.innerHTML = `
+            <div class="result">
+                <h2>Please enter a question</h2>
+            </div>
+        `;
+
+        return;
+    }
+
+    conversationState.role = role;
+
+    // ----------------------------
+    // Waiting for Collection
+    // ----------------------------
+
+    if (conversationState.waitingForCollection) {
+
+        const collection =
+            detectCollection(question);
+
+        if (!collection) {
+
+            resultsDiv.innerHTML = `
+                <div class="result">
+
+                    <h2>Collection Required</h2>
+
+                    <p>
+                        Which collection are you working with?
+                    </p>
+
+                    <ul>
+                        <li>Cancer</li>
+                        <li>Virtual Wards</li>
+                        <li>Mental Health</li>
+                        <li>Population Health</li>
+                        <li>CWT</li>
+                    </ul>
+
+                </div>
+            `;
+
+            return;
+        }
+
+        conversationState.collection = collection;
+        conversationState.waitingForCollection = false;
+
+        if (!conversationState.service) {
+
+            conversationState.waitingForService = true;
+
+            resultsDiv.innerHTML = `
+                <div class="result">
+
+                    <h2>Collection Identified</h2>
+
+                    <p>
+                        Collection:
+                        <strong>${collection}</strong>
+                    </p>
+
+                    <p>
+                        Which service are you using?
+                    </p>
+
+                    <ul>
+                        <li>Foundry</li>
+                        <li>CRDL</li>
+                        <li>MESH</li>
+                        <li>PET</li>
+                        <li>DVE</li>
+                    </ul>
+
+                </div>
+            `;
+
+            return;
+        }
+    }
+
+    // ----------------------------
+    // Waiting for Service
+    // ----------------------------
+
+    if (conversationState.waitingForService) {
+
+        const service =
+            detectService(question);
+
+        if (!service) {
+
+            resultsDiv.innerHTML = `
+                <div class="result">
+
+                    <h2>Service Required</h2>
+
+                    <p>
+                        Please tell me which service
+                        you are using.
+                    </p>
+
+                    <ul>
+                        <li>Foundry</li>
+                        <li>CRDL</li>
+                        <li>MESH</li>
+                        <li>PET</li>
+                        <li>DVE</li>
+                    </ul>
+
+                </div>
+            `;
+
+            return;
+        }
+
+        conversationState.service = service;
+        conversationState.waitingForService = false;
+
+        findAndRenderGuidance();
+        return;
+    }
+
+    // ----------------------------
+    // New Question
+    // ----------------------------
+
+    conversationState.intent =
+        detectIntent(question);
+
+    conversationState.collection =
+        detectCollection(question);
+
+    conversationState.service =
+        detectService(question);
+
+    if (!conversationState.intent) {
+
+        resultsDiv.innerHTML = `
+            <div class="result">
+
+                <h2>I couldn't determine the request</h2>
+
+                <p>Try asking something like:</p>
+
+                <ul>
+                    <li>I need help onboarding a dataset</li>
+                    <li>I need access to data</li>
+                    <li>I need governance approval</li>
+                    <li>I need to integrate MESH</li>
+                </ul>
+
+            </div>
+        `;
+
+        return;
+    }
+
+    if (!conversationState.collection) {
+
+        conversationState.waitingForCollection = true;
+
+        resultsDiv.innerHTML = `
+            <div class="result">
+
+                <h2>I understand your request</h2>
+
+                <p>
+                    Which collection or dataset
+                    are you working with?
+                </p>
+
+                <ul>
+                    <li>Cancer</li>
+                    <li>Virtual Wards</li>
+                    <li>Mental Health</li>
+                    <li>Population Health</li>
+                    <li>CWT</li>
+                </ul>
+
+            </div>
+        `;
+
+        return;
+    }
+
+    if (!conversationState.service) {
+
+        conversationState.waitingForService = true;
+
+        resultsDiv.innerHTML = `
+            <div class="result">
+
+                <h2>Collection Identified</h2>
+
+                <p>
+                    Collection:
+                    <strong>${conversationState.collection}</strong>
+                </p>
+
+                <p>
+                    Which service are you using?
+                </p>
+
+                <ul>
+                    <li>Foundry</li>
+                    <li>CRDL</li>
+                    <li>MESH</li>
+                    <li>PET</li>
+                    <li>DVE</li>
+                </ul>
+
+            </div>
+        `;
+
+        return;
+    }
+
+    findAndRenderGuidance();
+}
+
+// ====================================
+// FIND GUIDANCE
+// ====================================
 
 function findAndRenderGuidance() {
 
-    const matchedRule =
-        rules.find(r =>
+    const resultsDiv =
+        document.getElementById("results");
 
-            r.intent === conversationState.intent &&
-            r.role === conversationState.role &&
-            r.collection === conversationState.collection &&
-            r.service === conversationState.service
+    const matchedRule = rules.find(r =>
 
-        );
+        r.intent === conversationState.intent &&
+        r.role === conversationState.role &&
+        r.collection === conversationState.collection &&
+        r.service === conversationState.service
+
+    );
 
     if (!matchedRule) {
 
-        document.getElementById("results").innerHTML = `
+        resultsDiv.innerHTML = `
             <div class="result">
 
-                <h2>
-                    No Guidance Found
-                </h2>
+                <h2>No Guidance Found</h2>
 
-                <p>
-
-                    I understood:
-
-                </p>
+                <p>I understood:</p>
 
                 <ul>
 
                     <li>
                         Intent:
                         ${conversationState.intent}
+                    </li>
+
+                    <li>
+                        Role:
+                        ${conversationState.role}
                     </li>
 
                     <li>
@@ -208,89 +479,14 @@ function findAndRenderGuidance() {
     renderGuidance(matchedRule);
 }
 
-    generateGuidance();
-}
+// ====================================
+// RENDER GUIDANCE
+// ====================================
 
-
-// -----------------------------------
-// GRAPH FUNCTIONS
-// -----------------------------------
-
-function getRelatedItems(capabilityName) {
-
-    return relationships.filter(r =>
-        r.source === capabilityName ||
-        r.target === capabilityName
-    );
-
-}
-
-function getArticles(capabilityName) {
-
-    return articles.filter(a =>
-        a.capability === capabilityName
-    );
-
-}
-
-
-// -----------------------------------
-// MAIN GUIDANCE ENGINE
-// -----------------------------------
-
-function generateGuidance() {
-
-    const intent =
-        document.getElementById("intent").value;
-
-    const role =
-        document.getElementById("role").value;
-
-    const collection =
-        document.getElementById("collection").value;
-
-    const service =
-        document.getElementById("service").value;
+function renderGuidance(rule) {
 
     const resultsDiv =
         document.getElementById("results");
-
-    const rule = rules.find(r =>
-        r.intent === intent &&
-        r.role === role &&
-        r.collection === collection &&
-        r.service === service
-    );
-
-    if (!rule) {
-
-        resultsDiv.innerHTML = `
-            <div class="result">
-                <h2>No Matching Guidance Found</h2>
-
-                <ul>
-                    <li><strong>Intent:</strong> ${intent}</li>
-                    <li><strong>Role:</strong> ${role}</li>
-                    <li><strong>Collection:</strong> ${collection}</li>
-                    <li><strong>Service:</strong> ${service}</li>
-                </ul>
-
-                <p>
-                  Add a matching rule to
-                  retrieval_rules.json
-                </p>
-
-            </div>
-        `;
-
-        return;
-    }
-
-    const relatedItems =
-        getRelatedItems(rule.capability);
-
-    const matchedArticles =
-        getArticles(rule.capability);
 
     resultsDiv.innerHTML = `
 
@@ -298,71 +494,39 @@ function generateGuidance() {
 
             <h2>NDIT Guidance</h2>
 
-            <p><strong>Role:</strong> ${role}</p>
-
-            <p><strong>Collection:</strong> ${collection}</p>
-
-            <p><strong>Service:</strong> ${service}</p>
-
-            <p><strong>Journey:</strong> ${rule.journey}</p>
-
             <p><strong>Capability:</strong> ${rule.capability}</p>
 
-            <p>
-                <strong>Description:</strong><br>
-                ${rule.description}
-            </p>
+            <p><strong>Description:</strong><br>${rule.description}</p>
 
-            <p>
-                <strong>Owner:</strong><br>
-                ${rule.owner}
-            </p>
+            <p><strong>Owner:</strong><br>${rule.owner}</p>
 
-            <p>
-                <strong>Timescale:</strong><br>
-                ${rule.timescale}
-            </p>
+            <p><strong>Timescale:</strong><br>${rule.timescale}</p>
 
             <h3>Governance Requirements</h3>
 
             <ul>
-            ${rule.governance.map(g =>
-                `<li>${g}</li>`
-            ).join("")}
+                ${rule.governance.map(
+                    g => `<li>${g}</li>`
+                ).join("")}
             </ul>
 
             <h3>Required Steps</h3>
 
             <ol>
-            ${rule.steps.map(step =>
-                `<li>${step}</li>`
-            ).join("")}
+                ${rule.steps.map(
+                    step => `<li>${step}</li>`
+                ).join("")}
             </ol>
 
             <h3>Knowledge Articles</h3>
 
             <ul>
-            ${matchedArticles.map(article =>
-                `<li>${article.title}</li>`
-            ).join("")}
+                ${rule.articles.map(
+                    article => `<li>${article}</li>`
+                ).join("")}
             </ul>
-
-            <h3>Knowledge Graph Connections</h3>
-
-            <ul>
-            ${relatedItems.map(rel =>
-                `<li>${rel.source} ${rel.relationship} ${rel.target}</li>`
-            ).join("")}
-            </ul>
-
-            <div class="next-action">
-
-                <strong>Next Action</strong>
-
-                <p>${rule.action}</p>
-
-            </div>
 
         </div>
+
     `;
 }
