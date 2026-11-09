@@ -1,18 +1,59 @@
 [
   {
-    "source_type": "Persona",
-    "source_name": "Data Engineer",
-    "relationship": "USES",
-    "target_type": "Service",
-    "target_name": "MESH"
+    "source_type": "Journey",
+    "source_name": "Business Need",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Project Setup"
   },
-
   {
-    "source_type": "Persona",
-    "source_name": "Data Engineer",
-    "relationship": "USES",
-    "target_type": "Service",
-    "target_name": "Foundry"
+    "source_type": "Journey",
+    "source_name": "Project Setup",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Project Setup"
+  },
+  {
+    "source_type": "Journey",
+    "source_name": "Dataset Onboarding",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Dataset Onboarding"
+  },
+  {
+    "source_type": "Journey",
+    "source_name": "Data Ingress",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Data Ingress"
+  },
+  {
+    "source_type": "Journey",
+    "source_name": "Development",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Data Validation"
+  },
+  {
+    "source_type": "Journey",
+    "source_name": "Design Approval",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Governance Management"
+  },
+  {
+    "source_type": "Journey",
+    "source_name": "Data Access",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Access Management"
+  },
+  {
+    "source_type": "Journey",
+    "source_name": "Data Egress",
+    "relationship": "CONTAINS",
+    "target_type": "Capability",
+    "target_name": "Data Egress"
   },
 
   {
@@ -22,109 +63,54 @@
     "target_type": "Service",
     "target_name": "CRDL"
   },
-
   {
     "source_type": "Persona",
-    "source_name": "Product Owner",
-    "relationship": "REQUIRES",
-    "target_type": "Governance",
-    "target_name": "DPIA"
+    "source_name": "Data Engineer",
+    "relationship": "USES",
+    "target_type": "Service",
+    "target_name": "MESH"
   },
-
   {
     "source_type": "Persona",
-    "source_name": "Product Owner",
-    "relationship": "REQUIRES",
-    "target_type": "Governance",
-    "target_name": "DSA"
-  },
-
-  {
-    "source_type": "Service",
-    "source_name": "MESH",
-    "relationship": "ENABLES",
-    "target_type": "Capability",
-    "target_name": "Data Ingress"
-  },
-
-  {
-    "source_type": "Service",
-    "source_name": "Foundry",
-    "relationship": "ENABLES",
-    "target_type": "Capability",
-    "target_name": "Dataset Onboarding"
-  },
-
-  {
-    "source_type": "Service",
-    "source_name": "CRDL",
-    "relationship": "ENABLES",
-    "target_type": "Capability",
-    "target_name": "Access Management"
-  },
-
-  {
-    "source_type": "Capability",
-    "source_name": "Dataset Onboarding",
-    "relationship": "REQUIRES",
-    "target_type": "Governance",
-    "target_name": "DSA"
-  },
-
-  {
-    "source_type": "Capability",
-    "source_name": "Dataset Onboarding",
-    "relationship": "REQUIRES",
-    "target_type": "Governance",
-    "target_name": "DPIA"
-  },
-
-  {
-    "source_type": "Capability",
-    "source_name": "Data Ingress",
-    "relationship": "REQUIRES",
-    "target_type": "Governance",
-    "target_name": "Security Review"
-  },
-
-  {
-    "source_type": "Capability",
-    "source_name": "Access Management",
-    "relationship": "REQUIRES",
-    "target_type": "Governance",
-    "target_name": "Access Approval"
-  },
-
-  {
-    "source_type": "Capability",
-    "source_name": "Dataset Onboarding",
-    "relationship": "SUPPORTED_BY",
-    "target_type": "KnowledgeArticle",
-    "target_name": "CRDL Onboarding Guide"
-  },
-
-  {
-    "source_type": "Capability",
-    "source_name": "Dataset Onboarding",
-    "relationship": "SUPPORTED_BY",
-    "target_type": "KnowledgeArticle",
-    "target_name": "DSA Process"
-  },
-
-  {
-    "source_type": "Capability",
-    "source_name": "Data Ingress",
-    "relationship": "SUPPORTED_BY",
-    "target_type": "KnowledgeArticle",
-    "target_name": "MESH Integration Guide"
-  },
-
-  {
-    "source_type": "Collection",
-    "source_name": "Cancer",
+    "source_name": "Data Engineer",
     "relationship": "USES",
     "target_type": "Service",
     "target_name": "Foundry"
+  },
+  {
+    "source_type": "Persona",
+    "source_name": "Developer",
+    "relationship": "USES",
+    "target_type": "Service",
+    "target_name": "DVE"
+  },
+  {
+    "source_type": "Persona",
+    "source_name": "Service Manager",
+    "relationship": "USES",
+    "target_type": "Service",
+    "target_name": "CRDL"
+  },
+  {
+    "source_type": "Persona",
+    "source_name": "Product Owner",
+    "relationship": "REQUIRES",
+    "target_type": "Governance",
+    "target_name": "DPIA"
+  },
+  {
+    "source_type": "Persona",
+    "source_name": "Product Owner",
+    "relationship": "REQUIRES",
+    "target_type": "Governance",
+    "target_name": "DSA"
+  },
+  {
+    "source_type": "Persona",
+    "source_name": "Information Governance Lead",
+    "relationship": "OWNS",
+    "target_type": "Capability",
+    "target_name": "Governance Management"
   },
 
   {
@@ -134,7 +120,6 @@
     "target_type": "Service",
     "target_name": "CRDL"
   },
-
   {
     "source_type": "Collection",
     "source_name": "Virtual Wards",
@@ -142,28 +127,227 @@
     "target_type": "Service",
     "target_name": "MESH"
   },
-
   {
-    "source_type": "Journey",
-    "source_name": "Dataset Onboarding",
-    "relationship": "CONTAINS",
-    "target_type": "Capability",
-    "target_name": "Dataset Onboarding"
+    "source_type": "Collection",
+    "source_name": "Cancer",
+    "relationship": "USES",
+    "target_type": "Service",
+    "target_name": "Foundry"
+  },
+  {
+    "source_type": "Collection",
+    "source_name": "Population Health",
+    "relationship": "USES",
+    "target_type": "Service",
+    "target_name": "CRDL"
   },
 
   {
-    "source_type": "Journey",
-    "source_name": "Data Access",
-    "relationship": "CONTAINS",
+    "source_type": "Collection",
+    "source_name": "Virtual Wards",
+    "relationship": "OWNED_BY",
+    "target_type": "Team",
+    "target_name": "Virtual Wards Team"
+  },
+  {
+    "source_type": "Collection",
+    "source_name": "Cancer",
+    "relationship": "OWNED_BY",
+    "target_type": "Team",
+    "target_name": "Cancer Programme Team"
+  },
+  {
+    "source_type": "Collection",
+    "source_name": "Population Health",
+    "relationship": "OWNED_BY",
+    "target_type": "Team",
+    "target_name": "Population Health Team"
+  },
+
+  {
+    "source_type": "Service",
+    "source_name": "CRDL",
+    "relationship": "ENABLES",
     "target_type": "Capability",
     "target_name": "Access Management"
   },
-
   {
-    "source_type": "Journey",
-    "source_name": "Data Ingress",
-    "relationship": "CONTAINS",
+    "source_type": "Service",
+    "source_name": "CRDL",
+    "relationship": "ENABLES",
+    "target_type": "Capability",
+    "target_name": "Dataset Onboarding"
+  },
+  {
+    "source_type": "Service",
+    "source_name": "MESH",
+    "relationship": "ENABLES",
     "target_type": "Capability",
     "target_name": "Data Ingress"
+  },
+  {
+    "source_type": "Service",
+    "source_name": "Foundry",
+    "relationship": "ENABLES",
+    "target_type": "Capability",
+    "target_name": "Dataset Onboarding"
+  },
+  {
+    "source_type": "Service",
+    "source_name": "Foundry",
+    "relationship": "ENABLES",
+    "target_type": "Capability",
+    "target_name": "Data Egress"
+  },
+
+  {
+    "source_type": "Capability",
+    "source_name": "Dataset Onboarding",
+    "relationship": "REQUIRES",
+    "target_type": "Governance",
+    "target_name": "DSA"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Dataset Onboarding",
+    "relationship": "REQUIRES",
+    "target_type": "Governance",
+    "target_name": "DPIA"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Data Ingress",
+    "relationship": "REQUIRES",
+    "target_type": "Governance",
+    "target_name": "Security Review"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Access Management",
+    "relationship": "REQUIRES",
+    "target_type": "Governance",
+    "target_name": "Access Approval"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Governance Management",
+    "relationship": "REQUIRES",
+    "target_type": "Governance",
+    "target_name": "DPIA"
+  },
+
+  {
+    "source_type": "Governance",
+    "source_name": "DSA",
+    "relationship": "USES_TEMPLATE",
+    "target_type": "Template",
+    "target_name": "DSA Template"
+  },
+  {
+    "source_type": "Governance",
+    "source_name": "DPIA",
+    "relationship": "USES_TEMPLATE",
+    "target_type": "Template",
+    "target_name": "DPIA Template"
+  },
+  {
+    "source_type": "Governance",
+    "source_name": "Security Review",
+    "relationship": "USES_TEMPLATE",
+    "target_type": "Template",
+    "target_name": "Security Review Checklist"
+  },
+  {
+    "source_type": "Governance",
+    "source_name": "Access Approval",
+    "relationship": "USES_TEMPLATE",
+    "target_type": "Template",
+    "target_name": "Access Request Form"
+  },
+  {
+    "source_type": "Governance",
+    "source_name": "Design Authority",
+    "relationship": "USES_TEMPLATE",
+    "target_type": "Template",
+    "target_name": "Design Authority Submission"
+  },
+
+  {
+    "source_type": "Capability",
+    "source_name": "Dataset Onboarding",
+    "relationship": "SUPPORTED_BY",
+    "target_type": "KnowledgeArticle",
+    "target_name": "CRDL Onboarding Guide"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Dataset Onboarding",
+    "relationship": "SUPPORTED_BY",
+    "target_type": "KnowledgeArticle",
+    "target_name": "Foundry Onboarding Guide"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Data Ingress",
+    "relationship": "SUPPORTED_BY",
+    "target_type": "KnowledgeArticle",
+    "target_name": "MESH Integration Guide"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Access Management",
+    "relationship": "SUPPORTED_BY",
+    "target_type": "KnowledgeArticle",
+    "target_name": "Access Management Guide"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Governance Management",
+    "relationship": "SUPPORTED_BY",
+    "target_type": "KnowledgeArticle",
+    "target_name": "Governance Handbook"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Data Ingress",
+    "relationship": "SUPPORTED_BY",
+    "target_type": "KnowledgeArticle",
+    "target_name": "Integration Standards"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Data Ingress",
+    "relationship": "SUPPORTED_BY",
+    "target_type": "KnowledgeArticle",
+    "target_name": "Architecture Principles"
+  },
+
+  {
+    "source_type": "Capability",
+    "source_name": "Dataset Onboarding",
+    "relationship": "OWNED_BY",
+    "target_type": "Team",
+    "target_name": "Data Platform Team"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Data Ingress",
+    "relationship": "OWNED_BY",
+    "target_type": "Team",
+    "target_name": "Platform Engineering"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Governance Management",
+    "relationship": "OWNED_BY",
+    "target_type": "Team",
+    "target_name": "Information Governance Team"
+  },
+  {
+    "source_type": "Capability",
+    "source_name": "Data Ingress",
+    "relationship": "REVIEWED_BY",
+    "target_type": "Team",
+    "target_name": "Architecture Team"
   }
 ]
