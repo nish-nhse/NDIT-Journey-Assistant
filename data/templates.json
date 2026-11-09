@@ -1,0 +1,51 @@
+[
+  {
+    "id": "TMP-001",
+    "name": "DSA Template",
+    "governance": "DSA",
+    "description": "Standard Data Sharing Agreement template for onboarding and data sharing activities.",
+    "owner_team": "Information Governance Team"
+  },
+  {
+    "id": "TMP-002",
+    "name": "DPIA Template",
+    "governance": "DPIA",
+    "description": "Data Protection Impact Assessment template used during solution design and onboarding.",
+    "owner_team": "Information Governance Team"
+  },
+  {
+    "id": "TMP-003",
+    "name": "Security Review Checklist",
+    "governance": "Security Review",
+    "description": "Checklist used to assess security risks and controls.",
+    "owner_team": "Platform Engineering"
+  },
+  {
+    "id": "TMP-004",
+    "name": "Access Request Form",
+    "governance": "Access Approval",
+    "description": "Standard form used to request access to services and datasets.",
+    "owner_team": "Information Governance Team"
+  },
+  {
+    "id": "TMP-005",
+    "name": "Design Authority Submission",
+    "governance": "Design Authority",
+    "description": "Template for submitting solutions to Design Authority review.",
+    "owner_team": "Architecture Team"
+  },
+  {
+    "id": "TMP-006",
+    "name": "Data Egress Request Form",
+    "governance": "Data Egress",
+    "description": "Template for requesting approved data extracts and exports.",
+    "owner_team": "Service Operations"
+  },
+  {
+    "id": "TMP-007",
+    "name": "Dataset Onboarding Form",
+    "governance": "Dataset Onboarding",
+    "description": "Initial onboarding request form for bringing datasets into the platform.",
+    "owner_team": "Data Platform Team"
+  }
+]
