@@ -43,212 +43,75 @@
 
     <main class="container">
 
-        <section class="search-panel">
+       <section class="search-panel">
 
-            <h2>Find Guidance</h2>
+    <h2>Find Guidance</h2>
 
-            <p>
-                Select your role, collection,
-                service and activity to receive
-                NDIT guidance.
-            </p>
-<label for="question">
-Ask a Question
-</label>
+    <p>
+        Select your role and ask a question.
+        The assistant will identify the most relevant
+        guidance, collections, services and governance.
+    </p>
 
-<textarea
-    id="question"
-    rows="3"
-    placeholder="I need to onboard a Cancer dataset into Foundry">
-</textarea>
+    <label for="role">
+        How are you using NDIT today?
+    </label>
 
-<button
-    type="button"
-    onclick="analyseQuestion()">
+    <select id="role">
 
-    Analyse Question
+        <option value="Analyst">
+            Analyst
+        </option>
 
-</button>
-            <label for="intent">
-                What are you trying to do?
-            </label>
+        <option value="Data Engineer">
+            Data Engineer
+        </option>
 
-            <select id="intent">
+        <option value="Developer">
+            Developer
+        </option>
 
-                <option value="how-onboard">
-                    Onboard Dataset
-                </option>
+        <option value="Service Manager">
+            Service Manager
+        </option>
 
-                <option value="how-access">
-                    Access Dataset
-                </option>
+        <option value="Product Owner">
+            Product Owner
+        </option>
 
-                <option value="approval">
-                    Request Approval
-                </option>
+        <option value="Solution Architect">
+            Solution Architect
+        </option>
 
-                <option value="integration">
-                    Integrate Service
-                </option>
+        <option value="Information Governance Lead">
+            Information Governance Lead
+        </option>
 
-                <option value="export">
-                    Export Data
-                </option>
+        <option value="Business User">
+            Business User
+        </option>
 
-            </select>
+    </select>
 
-            <label for="role">
-                Role
-            </label>
+    <label for="question">
+        What would you like help with?
+    </label>
 
-            <select id="role">
+    <textarea
+        id="question"
+        rows="4"
+        placeholder="Example: I need to onboard a Cancer dataset into Foundry">
+    </textarea>
 
-                <option value="Analyst">
-                    Analyst
-                </option>
+    <button
+        type="button"
+        onclick="analyseQuestion()">
 
-                <option value="Data Engineer">
-                    Data Engineer
-                </option>
+        Analyse Question
 
-                <option value="Developer">
-                    Developer
-                </option>
+    </button>
 
-                <option value="Service Manager">
-                    Service Manager
-                </option>
-
-                <option value="Product Owner">
-                    Product Owner
-                </option>
-
-                <option value="Solution Architect">
-                    Solution Architect
-                </option>
-
-                <option value="Information Governance Lead">
-                    Information Governance Lead
-                </option>
-
-                <option value="Business User">
-                    Business User
-                </option>
-
-            </select>
-
-            <label for="collection">
-                Collection
-            </label>
-
-            <select id="collection">
-
-                <option value="Virtual Wards">
-                    Virtual Wards
-                </option>
-
-                <option value="CWT">
-                    CWT
-                </option>
-
-                <option value="Cancer">
-                    Cancer
-                </option>
-
-                <option value="Urgent and Emergency Care">
-                    Urgent and Emergency Care
-                </option>
-
-                <option value="Elective Recovery">
-                    Elective Recovery
-                </option>
-
-                <option value="Population Health">
-                    Population Health
-                </option>
-
-                <option value="Mental Health">
-                    Mental Health
-                </option>
-
-                <option value="Primary Care">
-                    Primary Care
-                </option>
-
-            </select>
-
-            <label for="service">
-                Service
-            </label>
-
-            <select id="service">
-
-                <option value="CRDL">
-                    CRDL
-                </option>
-
-                <option value="MESH">
-                    MESH
-                </option>
-
-                <option value="PET">
-                    PET
-                </option>
-
-                <option value="DVE">
-                    DVE
-                </option>
-
-                <option value="Foundry">
-                    Foundry
-                </option>
-
-            </select>
-
-            <button
-                type="button"
-                onclick="generateGuidance()">
-
-                Generate Guidance
-
-            </button>
-
-        </section>
-
-        <section id="results">
-
-            <div class="placeholder">
-
-                <h3>Welcome</h3>
-
-                <p>
-                    Select the relevant options
-                    and click Generate Guidance.
-                </p>
-
-                <p>
-                    Guidance will include:
-                </p>
-
-                <ul>
-
-                    <li>Capability</li>
-
-                    <li>Governance Requirements</li>
-
-                    <li>Required Steps</li>
-
-                    <li>Knowledge Articles</li>
-
-                    <li>Service Owner</li>
-
-                    <li>Expected Timescales</li>
-
-                </ul>
-
-            </div>
-
-        </section>
+</section>
 
     </main>
 
