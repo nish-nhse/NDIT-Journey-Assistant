@@ -1,0 +1,50 @@
+[
+  {
+    "id": "TEAM-001",
+    "name": "Data Platform Team",
+    "description": "Responsible for data onboarding, ingestion, transformation and platform support.",
+    "type": "Engineering"
+  },
+  {
+    "id": "TEAM-002",
+    "name": "Platform Engineering",
+    "description": "Responsible for platform infrastructure, connectivity and technical operations.",
+    "type": "Engineering"
+  },
+  {
+    "id": "TEAM-003",
+    "name": "Information Governance Team",
+    "description": "Responsible for data protection, DPIA reviews and DSA approvals.",
+    "type": "Governance"
+  },
+  {
+    "id": "TEAM-004",
+    "name": "Architecture Team",
+    "description": "Responsible for solution architecture reviews and design authority governance.",
+    "type": "Architecture"
+  },
+  {
+    "id": "TEAM-005",
+    "name": "Virtual Wards Team",
+    "description": "Business and operational ownership of the Virtual Wards collection.",
+    "type": "Business"
+  },
+  {
+    "id": "TEAM-006",
+    "name": "Cancer Programme Team",
+    "description": "Business and operational ownership of Cancer collections and services.",
+    "type": "Business"
+  },
+  {
+    "id": "TEAM-007",
+    "name": "Population Health Team",
+    "description": "Business ownership of Population Health reporting and analytics.",
+    "type": "Business"
+  },
+  {
+    "id": "TEAM-008",
+    "name": "Service Operations",
+    "description": "Responsible for operational readiness and production support.",
+    "type": "Operations"
+  }
+]
