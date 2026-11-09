@@ -42,15 +42,14 @@
     </header>
 
     <main class="container">
+<section class="search-panel">
 
-       <section class="search-panel">
-
-    <h2>Find Guidance</h2>
+    <h2>NDIT Journey Assistant</h2>
 
     <p>
-        Select your role and ask a question.
-        The assistant will identify the most relevant
-        guidance, collections, services and governance.
+        Select your role and describe what you need help with.
+        The assistant will determine the most appropriate
+        journey, capability, service and governance requirements.
     </p>
 
     <label for="role">
@@ -110,6 +109,82 @@
         Analyse Question
 
     </button>
+
+    <!-- Hidden debugging controls -->
+
+    <div class="hidden-debug">
+
+        <select id="intent">
+
+            <option value="how-onboard">
+                Onboard Dataset
+            </option>
+
+            <option value="how-access">
+                Access Dataset
+            </option>
+
+            <option value="approval">
+                Request Approval
+            </option>
+
+            <option value="integration">
+                Integrate Service
+            </option>
+
+            <option value="export">
+                Export Data
+            </option>
+
+        </select>
+
+        <select id="collection">
+
+            <option value="Virtual Wards">
+                Virtual Wards
+            </option>
+
+            <option value="CWT">
+                CWT
+            </option>
+
+            <option value="Cancer">
+                Cancer
+            </option>
+
+            <option value="Urgent and Emergency Care">
+                Urgent and Emergency Care
+            </option>
+
+            <option value="Elective Recovery">
+                Elective Recovery
+            </option>
+
+            <option value="Population Health">
+                Population Health
+            </option>
+
+            <option value="Mental Health">
+                Mental Health
+            </option>
+
+            <option value="Primary Care">
+                Primary Care
+            </option>
+
+        </select>
+
+        <select id="service">
+
+            <option value="CRDL">CRDL</option>
+            <option value="MESH">MESH</option>
+            <option value="PET">PET</option>
+            <option value="DVE">DVE</option>
+            <option value="Foundry">Foundry</option>
+
+        </select>
+
+    </div>
 
 </section>
 
