@@ -1,0 +1,166 @@
+[
+  {
+    "id": "KB-001",
+    "title": "Dataset Onboarding Overview",
+    "category": "Journey",
+    "service": "Foundry",
+    "capability": "Dataset Onboarding",
+    "collection": "General",
+    "summary": "Overview of the dataset onboarding process within NDIT.",
+    "content": "Dataset onboarding is the process of introducing a new dataset into NDIT. This includes discovery, governance assessment, onboarding approval, technical ingestion, testing and operational readiness.",
+    "keywords": [
+      "onboarding",
+      "dataset",
+      "foundry",
+      "ingestion",
+      "governance"
+    ]
+  },
+
+  {
+    "id": "KB-002",
+    "title": "Foundry Overview",
+    "category": "Service",
+    "service": "Foundry",
+    "capability": "",
+    "collection": "General",
+    "summary": "Overview of the Foundry platform.",
+    "content": "Foundry provides capabilities for data ingestion, transformation, modelling, analytics and operational workflows. It is used to onboard, process and consume datasets across NDIT collections.",
+    "keywords": [
+      "foundry",
+      "service",
+      "platform",
+      "analytics"
+    ]
+  },
+
+  {
+    "id": "KB-003",
+    "title": "CRDL Overview",
+    "category": "Service",
+    "service": "CRDL",
+    "capability": "",
+    "collection": "General",
+    "summary": "Overview of CRDL.",
+    "content": "CRDL supports dataset discovery, onboarding, reference data management and controlled access to information assets.",
+    "keywords": [
+      "crdl",
+      "reference data",
+      "discovery",
+      "onboarding"
+    ]
+  },
+
+  {
+    "id": "KB-004",
+    "title": "MESH Integration Guide",
+    "category": "Service",
+    "service": "MESH",
+    "capability": "Data Ingress",
+    "collection": "General",
+    "summary": "Overview of MESH integration.",
+    "content": "MESH is used for secure movement of healthcare data. Typical implementation includes mailbox configuration, routing setup, testing and operational handover.",
+    "keywords": [
+      "mesh",
+      "integration",
+      "messaging",
+      "data transfer"
+    ]
+  },
+
+  {
+    "id": "KB-005",
+    "title": "Data Sharing Agreements",
+    "category": "Governance",
+    "service": "",
+    "capability": "Governance Management",
+    "collection": "General",
+    "summary": "Understanding DSA requirements.",
+    "content": "A Data Sharing Agreement defines how information may be shared, who may access it and the responsibilities of the parties involved.",
+    "keywords": [
+      "dsa",
+      "governance",
+      "data sharing"
+    ]
+  },
+
+  {
+    "id": "KB-006",
+    "title": "Data Protection Impact Assessments",
+    "category": "Governance",
+    "service": "",
+    "capability": "Governance Management",
+    "collection": "General",
+    "summary": "Overview of DPIA activities.",
+    "content": "A DPIA identifies privacy risks associated with processing personal information and records mitigation actions prior to implementation.",
+    "keywords": [
+      "dpia",
+      "privacy",
+      "governance"
+    ]
+  },
+
+  {
+    "id": "KB-007",
+    "title": "Virtual Wards Collection",
+    "category": "Collection",
+    "service": "",
+    "capability": "",
+    "collection": "Virtual Wards",
+    "summary": "Overview of the Virtual Wards collection.",
+    "content": "Virtual Wards contains datasets, reporting assets and integration services supporting remote care and virtual ward programmes.",
+    "keywords": [
+      "virtual wards",
+      "collection",
+      "dataset"
+    ]
+  },
+
+  {
+    "id": "KB-008",
+    "title": "Cancer Collection",
+    "category": "Collection",
+    "service": "",
+    "capability": "",
+    "collection": "Cancer",
+    "summary": "Overview of the Cancer collection.",
+    "content": "The Cancer collection supports cancer services, reporting, analytics and operational data products across NDIT.",
+    "keywords": [
+      "cancer",
+      "collection",
+      "reporting"
+    ]
+  },
+
+  {
+    "id": "KB-009",
+    "title": "Population Health Collection",
+    "category": "Collection",
+    "service": "",
+    "capability": "",
+    "collection": "Population Health",
+    "summary": "Overview of Population Health capabilities.",
+    "content": "Population Health assets provide analytical and reporting capabilities across geographical and service-based populations.",
+    "keywords": [
+      "population health",
+      "analytics",
+      "collection"
+    ]
+  },
+
+  {
+    "id": "KB-010",
+    "title": "Access Management Process",
+    "category": "Capability",
+    "service": "CRDL",
+    "capability": "Access Management",
+    "collection": "General",
+    "summary": "Overview of access requests and approvals.",
+    "content": "Access Management covers requesting access to services, datasets and platforms, obtaining approvals and managing permissions.",
+    "keywords": [
+      "access",
+      "approval",
+      "permissions"
+    ]
+  }
+]
