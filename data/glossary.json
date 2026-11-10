@@ -1,0 +1,190 @@
+[
+  {
+    "term": "NDIT",
+    "category": "Platform",
+    "definition": "National Data Integration Platform providing services, capabilities, governance controls and data products for NHS England.",
+    "aliases": [
+      "National Data Integration Platform"
+    ]
+  },
+  {
+    "term": "Suite",
+    "category": "Concept",
+    "definition": "A grouped collection of NDIT services, capabilities, governance controls and assets delivered together to support a business outcome."
+  },
+  {
+    "term": "Journey",
+    "category": "Concept",
+    "definition": "A process or pathway followed by users to achieve a specific objective within NDIT."
+  },
+  {
+    "term": "Capability",
+    "category": "Concept",
+    "definition": "A business or technical function delivered by NDIT, such as Dataset Onboarding, Data Ingress or Governance Management."
+  },
+  {
+    "term": "Collection",
+    "category": "Concept",
+    "definition": "A grouped set of datasets, information assets and services organised around a specific healthcare domain or business area."
+  },
+  {
+    "term": "Persona",
+    "category": "Concept",
+    "definition": "A role or user type interacting with NDIT, such as Analyst, Data Engineer or Product Owner."
+  },
+  {
+    "term": "CRDL",
+    "category": "Service",
+    "definition": "A service supporting dataset discovery, onboarding, reference data management and controlled access to data assets."
+  },
+  {
+    "term": "Foundry",
+    "category": "Service",
+    "definition": "Palantir Foundry platform used for data integration, transformation, modelling, analytics and operational workflows."
+  },
+  {
+    "term": "MESH",
+    "category": "Service",
+    "definition": "Messaging Exchange for Social Care and Health. A secure NHS service used to transfer healthcare-related files and messages."
+  },
+  {
+    "term": "PET",
+    "category": "Service",
+    "definition": "A platform capability supporting secure movement and transfer of approved data."
+  },
+  {
+    "term": "DVE",
+    "category": "Service",
+    "definition": "Data Virtual Environment used for analytical development, experimentation and controlled access activities."
+  },
+  {
+    "term": "Access Management",
+    "category": "Capability",
+    "definition": "Capability governing user access requests, approvals and permissions for NDIT services and datasets."
+  },
+  {
+    "term": "Dataset Onboarding",
+    "category": "Capability",
+    "definition": "Process for introducing a new dataset into NDIT including governance, ingestion, validation, testing and operational readiness."
+  },
+  {
+    "term": "Data Ingress",
+    "category": "Capability",
+    "definition": "Process of bringing source data into NDIT services and analytical platforms."
+  },
+  {
+    "term": "Data Validation",
+    "category": "Capability",
+    "definition": "Capability used to verify data quality, completeness, format and fitness for purpose before use."
+  },
+  {
+    "term": "Data Egress",
+    "category": "Capability",
+    "definition": "Process of exporting approved data from NDIT services to authorised consumers or destinations."
+  },
+  {
+    "term": "Governance Management",
+    "category": "Capability",
+    "definition": "Capability supporting governance assessments, approvals, compliance reviews and assurance processes."
+  },
+  {
+    "term": "DSA",
+    "category": "Governance",
+    "definition": "Data Sharing Agreement defining the legal and operational arrangements for sharing data between organisations."
+  },
+  {
+    "term": "DPIA",
+    "category": "Governance",
+    "definition": "Data Protection Impact Assessment used to assess and mitigate privacy and data protection risks."
+  },
+  {
+    "term": "Security Review",
+    "category": "Governance",
+    "definition": "Assessment of security controls, risks and compliance requirements prior to onboarding, implementation or change."
+  },
+  {
+    "term": "Access Approval",
+    "category": "Governance",
+    "definition": "Formal approval process required before granting access to data, services or environments."
+  },
+  {
+    "term": "Design Authority",
+    "category": "Governance",
+    "definition": "Architecture and design review forum responsible for approving significant technical decisions and solution designs."
+  },
+  {
+    "term": "Template",
+    "category": "Concept",
+    "definition": "Standard document, form or artefact used to support governance, onboarding or delivery activities."
+  },
+  {
+    "term": "Data Engineer",
+    "category": "Persona",
+    "definition": "Technical role responsible for onboarding, integration, transformation, movement and management of datasets."
+  },
+  {
+    "term": "Analyst",
+    "category": "Persona",
+    "definition": "Role responsible for analysing datasets, producing reports and generating insights from data products."
+  },
+  {
+    "term": "Developer",
+    "category": "Persona",
+    "definition": "Role responsible for developing technical solutions, integrations and platform components."
+  },
+  {
+    "term": "Service Manager",
+    "category": "Persona",
+    "definition": "Role accountable for operation, delivery and lifecycle management of services."
+  },
+  {
+    "term": "Product Owner",
+    "category": "Persona",
+    "definition": "Role responsible for prioritisation, business value and product outcomes."
+  },
+  {
+    "term": "Solution Architect",
+    "category": "Persona",
+    "definition": "Role responsible for solution design, architecture governance and technical decision-making."
+  },
+  {
+    "term": "Information Governance Lead",
+    "category": "Persona",
+    "definition": "Role responsible for privacy, governance compliance, DPIA review and DSA oversight."
+  },
+  {
+    "term": "Business User",
+    "category": "Persona",
+    "definition": "Individual consuming NDIT services, reports, dashboards or operational outputs."
+  },
+  {
+    "term": "Virtual Wards",
+    "category": "Collection",
+    "definition": "Collection containing datasets, services and analytical capabilities supporting virtual ward services."
+  },
+  {
+    "term": "Cancer",
+    "category": "Collection",
+    "definition": "Collection containing datasets, integrations and reporting assets related to cancer programmes and services."
+  },
+  {
+    "term": "Population Health",
+    "category": "Collection",
+    "definition": "Collection containing datasets and assets supporting population health analytics and reporting."
+  },
+  {
+    "term": "Mental Health",
+    "category": "Collection",
+    "definition": "Collection containing datasets and assets supporting mental health services and reporting."
+  },
+  {
+    "term": "Primary Care",
+    "category": "Collection",
+    "definition": "Collection containing datasets and assets supporting primary care services and analysis."
+  },
+  {
+    "term": "CWT",
+    "category": "Collection",
+    "definition": "Collection supporting data products, datasets and services associated with the CWT domain."
+  }
+]
