@@ -1,0 +1,144 @@
+[
+  {
+    "type": "Journey",
+    "description": "User wants guidance on completing an activity or process.",
+    "patterns": [
+      "how do i",
+      "i need to",
+      "help me",
+      "onboard",
+      "access",
+      "integrate",
+      "approval",
+      "export",
+      "configure",
+      "set up",
+      "guide me"
+    ],
+    "route": "retrieval_rules"
+  },
+
+  {
+    "type": "Definition",
+    "description": "User wants a definition or explanation of a term.",
+    "patterns": [
+      "what is",
+      "define",
+      "meaning of",
+      "what does",
+      "explain the term",
+      "tell me what"
+    ],
+    "route": "glossary"
+  },
+
+  {
+    "type": "Knowledge",
+    "description": "User wants information about a topic, service, collection or capability.",
+    "patterns": [
+      "tell me about",
+      "explain",
+      "describe",
+      "overview",
+      "how does",
+      "learn about",
+      "information about",
+      "details about"
+    ],
+    "route": "knowledge_content"
+  },
+
+  {
+    "type": "Governance",
+    "description": "User wants guidance about approvals, assessments or compliance.",
+    "patterns": [
+      "dsa",
+      "dpia",
+      "assurance",
+      "approval",
+      "governance",
+      "security review",
+      "design authority",
+      "compliance"
+    ],
+    "route": "governance"
+  },
+
+  {
+    "type": "Template",
+    "description": "User wants a document, form or governance template.",
+    "patterns": [
+      "template",
+      "form",
+      "document",
+      "submission",
+      "checklist",
+      "request form"
+    ],
+    "route": "templates"
+  },
+
+  {
+    "type": "Ownership",
+    "description": "User wants to know who owns or supports something.",
+    "patterns": [
+      "who owns",
+      "owner",
+      "support team",
+      "responsible for",
+      "contact",
+      "managed by"
+    ],
+    "route": "teams"
+  },
+
+  {
+    "type": "Service",
+    "description": "User wants information about a platform or service.",
+    "patterns": [
+      "foundry",
+      "crdl",
+      "mesh",
+      "pet",
+      "dve"
+    ],
+    "route": "services"
+  },
+
+  {
+    "type": "Collection",
+    "description": "User wants information about a collection or programme area.",
+    "patterns": [
+      "virtual wards",
+      "cancer",
+      "population health",
+      "mental health",
+      "primary care",
+      "cwt",
+      "urgent and emergency care",
+      "elective recovery"
+    ],
+    "route": "collections"
+  },
+
+  {
+    "type": "Capability",
+    "description": "User wants information about an NDIT capability.",
+    "patterns": [
+      "dataset onboarding",
+      "access management",
+      "data ingress",
+      "data egress",
+      "governance management",
+      "data validation"
+    ],
+    "route": "capabilities"
+  },
+
+  {
+    "type": "Fallback",
+    "description": "Question could not be classified.",
+    "patterns": [],
+    "route": "knowledge_content"
+  }
+]
