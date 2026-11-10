@@ -1,3 +1,7 @@
+let questionClassifications = [];
+let glossary = [];
+let knowledgeContent = [];
+let searchIndex = [];
 let rules = [];
 let relationships = [];
 let articles = [];
@@ -26,9 +30,23 @@ Promise.all([
     fetch("data/knowledge_graph_relationships.json").then(r => r.json()),
     fetch("data/knowledge_articles.json").then(r => r.json()),
     fetch("data/services.json").then(r => r.json()),
-    fetch("data/collections.json").then(r => r.json())
+    fetch("data/collections.json").then(r => r.json()),
+    fetch("data/question_classification.json").then(r => r.json()),
+    fetch("data/glossary.json").then(r => r.json()),
+    fetch("data/knowledge_content.json").then(r => r.json()),
+    fetch("data/search_index.json").then(r => r.json())
 ])
-.then(([ruleData, relationshipData, articleData, serviceData, collectionData]) => {
+.then(([
+    ruleData,
+    relationshipData,
+    articleData,
+    serviceData,
+    collectionData,
+    classificationData,
+    glossaryData,
+    knowledgeData,
+    searchData
+]) => {
 
     rules = ruleData;
     relationships = relationshipData;
@@ -36,12 +54,18 @@ Promise.all([
     services = serviceData;
     collections = collectionData;
 
+    questionClassifications = classificationData;
+    glossary = glossaryData;
+    knowledgeContent = knowledgeData;
+    searchIndex = searchData;
+
     console.log("Data loaded successfully");
 
 })
 .catch(error => {
     console.error("Failed to load data:", error);
 });
+
 
 // ====================================
 // INTENT DETECTION
@@ -53,8 +77,8 @@ function detectIntent(question) {
 
     if (
         text.includes("onboard") ||
-        text.includes("ingest") ||
-        text.includes("dataset")
+        text.includes("ingest") 
+        
     ) {
         return "how-onboard";
     }
@@ -158,6 +182,129 @@ function detectService(question) {
     return null;
 }
 
+function classifyQuestion(question) {
+
+    const text = question.toLowerCase();
+
+    for (const classification of questionClassifications) {
+
+        for (const pattern of classification.patterns) {
+
+            if (text.includes(pattern.toLowerCase())) {
+
+                return classification;
+
+            }
+        }
+    }
+
+    return {
+        type: "Fallback",
+        route: "knowledge_content"
+    };
+}
+
+function searchGlossary(question) {
+
+    const text = question.toLowerCase();
+
+    return glossary.find(item => {
+
+    const termMatch =
+        text.includes(
+            item.term.toLowerCase()
+        );
+
+    const aliasMatch =
+        item.aliases &&
+        item.aliases.some(alias =>
+            text.includes(
+                alias.toLowerCase()
+            )
+        );
+
+    return termMatch || aliasMatch;
+
+});
+
+}
+function searchKnowledge(question) {
+
+    const text = question.toLowerCase();
+
+    return knowledgeContent.find(article =>
+
+        article.keywords.some(keyword =>
+
+            text.includes(keyword.toLowerCase())
+
+        )
+
+    );
+}
+
+function renderGlossaryResult(result) {
+
+    document.getElementById("results").innerHTML = `
+
+        <div class="result">
+
+            <h2>${result.term}</h2>
+
+            <p>
+
+                <strong>Category:</strong>
+
+                ${result.category}
+
+            </p>
+
+            <p>
+
+                ${result.definition}
+
+            </p>
+
+        </div>
+
+    `;
+}
+
+function renderKnowledgeResult(result) {
+
+    document.getElementById("results").innerHTML = `
+
+        <div class="result">
+
+            <h2>${result.title}</h2>
+
+            <p>
+
+                <strong>Category:</strong>
+
+                ${result.category}
+
+            </p>
+
+            <p>
+
+                ${result.summary}
+
+            </p>
+
+            <hr>
+
+            <p>
+
+                ${result.content}
+
+            </p>
+
+        </div>
+
+    `;
+}
+
 // ====================================
 // HELPER FUNCTIONS
 // ====================================
@@ -189,6 +336,38 @@ function analyseQuestion() {
         document.getElementById("question")
             .value
             .trim();
+    const classification =
+    classifyQuestion(question);
+    
+if (classification.route === "glossary") {
+
+    const result =
+        searchGlossary(question);
+
+    if (result) {
+
+        resetConversationState();
+
+        renderGlossaryResult(result);
+
+        return;
+    }
+}
+
+if (classification.route === "knowledge_content") {
+
+    const result =
+        searchKnowledge(question);
+
+    if (result) {
+
+        resetConversationState();
+
+        renderKnowledgeResult(result);
+
+        return;
+    }
+}
 
     const role =
         document.getElementById("role").value;
