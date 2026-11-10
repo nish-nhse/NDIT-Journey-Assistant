@@ -1,0 +1,312 @@
+[
+  {
+    "type": "Glossary",
+    "title": "NDIT",
+    "source": "glossary",
+    "target": "NDIT",
+    "keywords": [
+      "ndit",
+      "national data integration platform",
+      "platform"
+    ]
+  },
+  {
+    "type": "Glossary",
+    "title": "Suite",
+    "source": "glossary",
+    "target": "Suite",
+    "keywords": [
+      "suite",
+      "capability",
+      "service group"
+    ]
+  },
+  {
+    "type": "Service",
+    "title": "Foundry",
+    "source": "services",
+    "target": "Foundry",
+    "keywords": [
+      "foundry",
+      "platform",
+      "analytics",
+      "ingestion",
+      "transformation"
+    ]
+  },
+  {
+    "type": "Service",
+    "title": "CRDL",
+    "source": "services",
+    "target": "CRDL",
+    "keywords": [
+      "crdl",
+      "reference data",
+      "dataset onboarding",
+      "access"
+    ]
+  },
+  {
+    "type": "Service",
+    "title": "MESH",
+    "source": "services",
+    "target": "MESH",
+    "keywords": [
+      "mesh",
+      "integration",
+      "messaging",
+      "data transfer"
+    ]
+  },
+  {
+    "type": "Service",
+    "title": "PET",
+    "source": "services",
+    "target": "PET",
+    "keywords": [
+      "pet",
+      "transfer",
+      "secure data movement"
+    ]
+  },
+  {
+    "type": "Service",
+    "title": "DVE",
+    "source": "services",
+    "target": "DVE",
+    "keywords": [
+      "dve",
+      "environment",
+      "workspace"
+    ]
+  },
+  {
+    "type": "Capability",
+    "title": "Dataset Onboarding",
+    "source": "capabilities",
+    "target": "Dataset Onboarding",
+    "keywords": [
+      "onboarding",
+      "dataset",
+      "ingestion",
+      "new data"
+    ]
+  },
+  {
+    "type": "Capability",
+    "title": "Access Management",
+    "source": "capabilities",
+    "target": "Access Management",
+    "keywords": [
+      "access",
+      "permission",
+      "approval",
+      "user access"
+    ]
+  },
+  {
+    "type": "Capability",
+    "title": "Data Ingress",
+    "source": "capabilities",
+    "target": "Data Ingress",
+    "keywords": [
+      "ingress",
+      "integration",
+      "load data",
+      "import"
+    ]
+  },
+  {
+    "type": "Capability",
+    "title": "Governance Management",
+    "source": "capabilities",
+    "target": "Governance Management",
+    "keywords": [
+      "governance",
+      "approval",
+      "dpia",
+      "dsa"
+    ]
+  },
+  {
+    "type": "Capability",
+    "title": "Data Egress",
+    "source": "capabilities",
+    "target": "Data Egress",
+    "keywords": [
+      "export",
+      "extract",
+      "egress"
+    ]
+  },
+  {
+    "type": "Governance",
+    "title": "DSA",
+    "source": "governance",
+    "target": "DSA",
+    "keywords": [
+      "dsa",
+      "data sharing agreement",
+      "sharing"
+    ]
+  },
+  {
+    "type": "Governance",
+    "title": "DPIA",
+    "source": "governance",
+    "target": "DPIA",
+    "keywords": [
+      "dpia",
+      "privacy",
+      "impact assessment"
+    ]
+  },
+  {
+    "type": "Governance",
+    "title": "Security Review",
+    "source": "governance",
+    "target": "Security Review",
+    "keywords": [
+      "security",
+      "review",
+      "assurance"
+    ]
+  },
+  {
+    "type": "Governance",
+    "title": "Access Approval",
+    "source": "governance",
+    "target": "Access Approval",
+    "keywords": [
+      "approval",
+      "access",
+      "authorisation"
+    ]
+  },
+  {
+    "type": "Governance",
+    "title": "Design Authority",
+    "source": "governance",
+    "target": "Design Authority",
+    "keywords": [
+      "architecture",
+      "design authority",
+      "technical review"
+    ]
+  },
+  {
+    "type": "Collection",
+    "title": "Cancer",
+    "source": "collections",
+    "target": "Cancer",
+    "keywords": [
+      "cancer",
+      "oncology",
+      "tumour"
+    ]
+  },
+  {
+    "type": "Collection",
+    "title": "Virtual Wards",
+    "source": "collections",
+    "target": "Virtual Wards",
+    "keywords": [
+      "virtual wards",
+      "remote care"
+    ]
+  },
+  {
+    "type": "Collection",
+    "title": "Population Health",
+    "source": "collections",
+    "target": "Population Health",
+    "keywords": [
+      "population health",
+      "population"
+    ]
+  },
+  {
+    "type": "Collection",
+    "title": "Mental Health",
+    "source": "collections",
+    "target": "Mental Health",
+    "keywords": [
+      "mental health",
+      "mh"
+    ]
+  },
+  {
+    "type": "Collection",
+    "title": "Primary Care",
+    "source": "collections",
+    "target": "Primary Care",
+    "keywords": [
+      "primary care",
+      "gp"
+    ]
+  },
+  {
+    "type": "Collection",
+    "title": "CWT",
+    "source": "collections",
+    "target": "CWT",
+    "keywords": [
+      "cwt"
+    ]
+  },
+  {
+    "type": "Knowledge",
+    "title": "Dataset Onboarding Overview",
+    "source": "knowledge_content",
+    "target": "KB-001",
+    "keywords": [
+      "dataset onboarding",
+      "ingestion",
+      "governance",
+      "testing"
+    ]
+  },
+  {
+    "type": "Knowledge",
+    "title": "Foundry Overview",
+    "source": "knowledge_content",
+    "target": "KB-002",
+    "keywords": [
+      "foundry",
+      "platform",
+      "analytics"
+    ]
+  },
+  {
+    "type": "Knowledge",
+    "title": "CRDL Overview",
+    "source": "knowledge_content",
+    "target": "KB-003",
+    "keywords": [
+      "crdl",
+      "reference data"
+    ]
+  },
+  {
+    "type": "Knowledge",
+    "title": "MESH Integration Guide",
+    "source": "knowledge_content",
+    "target": "KB-004",
+    "keywords": [
+      "mesh",
+      "integration",
+      "messaging"
+    ]
+  },
+  {
+    "type": "Knowledge",
+    "title": "Access Management Process",
+    "source": "knowledge_content",
+    "target": "KB-010",
+    "keywords": [
+      "access",
+      "approval",
+      "permission"
+    ]
+  }
+]
