@@ -204,6 +204,106 @@ function classifyQuestion(question) {
     };
 }
 
+function detectRelationshipQuestion(question) {
+
+    const text =
+        question.toLowerCase();
+
+    if (
+        text.includes("who owns") ||
+        text.includes("owner")
+    ) {
+        return {
+            type: "OWNED_BY"
+        };
+    }
+
+    if (
+        text.includes("what governance") ||
+        text.includes("requirements") ||
+        text.includes("what approvals")
+    ) {
+        return {
+            type: "REQUIRES"
+        };
+    }
+
+    if (
+        text.includes("supports") ||
+        text.includes("supported by")
+    ) {
+        return {
+            type: "SUPPORTED_BY"
+        };
+    }
+
+    if (
+        text.includes("reviewed by")
+    ) {
+        return {
+            type: "REVIEWED_BY"
+        };
+    }
+
+    if (
+        text.includes("which template") ||
+        text.includes("what template")
+    ) {
+        return {
+            type: "USES_TEMPLATE"
+        };
+    }
+
+    return null;
+}
+
+function detectGraphEntity(question) {
+
+    const text =
+        question.toLowerCase();
+
+    const entities = [
+
+        "Dataset Onboarding",
+        "Data Ingress",
+        "Access Management",
+        "Governance Management",
+
+        "Foundry",
+        "CRDL",
+        "MESH",
+        "PET",
+        "DVE",
+
+        "DSA",
+        "DPIA",
+
+        "Cancer",
+        "Virtual Wards",
+        "Population Health",
+        "Mental Health",
+        "Primary Care",
+        "CWT"
+
+    ];
+
+    for (const entity of entities) {
+
+        if (
+            text.includes(
+                entity.toLowerCase()
+            )
+        ) {
+
+            return entity;
+
+        }
+    }
+
+    return null;
+}
+
+
 function searchGlossary(question) {
 
     const text = question.toLowerCase();
@@ -330,6 +430,169 @@ function getArticles(capabilityName) {
 // MAIN CONVERSATION
 // ====================================
 
+function searchRelationships(entityName) {
+
+    return relationships.filter(rel =>
+
+        rel.source_name.toLowerCase() ===
+        entityName.toLowerCase()
+
+        ||
+
+        rel.target_name.toLowerCase() ===
+        entityName.toLowerCase()
+
+    );
+
+}
+
+function renderRelationshipResults(
+    entityName,
+    relationshipResults
+) {
+
+    const resultsDiv =
+        document.getElementById("results");
+
+    if (!relationshipResults.length) {
+
+        resultsDiv.innerHTML = `
+
+            <div class="result">
+
+                <h2>
+                    No Relationships Found
+                </h2>
+
+                <p>
+                    No graph relationships were found
+                    for <strong>${entityName}</strong>.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+    const groupedRelationships = {};
+
+    relationshipResults.forEach(rel => {
+
+        const relationship =
+            rel.relationship;
+
+        if (!groupedRelationships[relationship]) {
+
+            groupedRelationships[
+                relationship
+            ] = [];
+
+        }
+
+        groupedRelationships[
+            relationship
+        ].push(rel);
+
+    });
+
+    let html = `
+
+        <div class="result">
+
+            <h2>
+                Relationship Results
+            </h2>
+
+            <p>
+
+                Entity:
+                <strong>${entityName}</strong>
+
+            </p>
+
+    `;
+
+    Object.entries(
+        groupedRelationships
+    ).forEach(([relationship, items]) => {
+
+        html += `
+
+            <h3>${relationship}</h3>
+
+            <ul>
+
+        `;
+
+        items.forEach(item => {
+
+            if (
+                item.source_name
+                    .toLowerCase() ===
+                entityName.toLowerCase()
+            ) {
+
+                html += `
+
+                    <li>
+
+                        ${item.target_name}
+                        (${item.target_type})
+
+                    </li>
+
+                `;
+
+            } else {
+
+                html += `
+
+                    <li>
+
+                        ${item.source_name}
+                        (${item.source_type})
+
+                    </li>
+
+                `;
+
+            }
+
+        });
+
+        html += `
+
+            </ul>
+
+        `;
+
+    });
+
+    html += `
+
+        </div>
+
+    `;
+
+    resultsDiv.innerHTML = html;
+
+}
+
+function resetConversationState() {
+
+    conversationState = {
+        role: null,
+        intent: null,
+        collection: null,
+        service: null,
+        waitingForCollection: false,
+        waitingForService: false
+    };
+
+}
+
 function analyseQuestion() {
 
     const question =
@@ -338,6 +601,44 @@ function analyseQuestion() {
             .trim();
     const classification =
     classifyQuestion(question);
+
+    const relationshipQuestion =
+    detectRelationshipQuestion(question);
+
+if (relationshipQuestion) {
+
+    const entity =
+        detectGraphEntity(question);
+
+    console.log(
+    "Relationship Question:",
+    relationshipQuestion
+);
+
+console.log(
+    "Graph Entity:",
+    entity
+);
+
+    if (entity) {
+
+        const relationshipResults =
+            searchRelationships(entity)
+                .filter(rel =>
+                    rel.relationship ===
+                    relationshipQuestion.type
+                );
+
+        renderRelationshipResults(
+            entity,
+            relationshipResults
+        );
+
+        return;
+
+    }
+
+}
     
 if (classification.route === "glossary") {
 
