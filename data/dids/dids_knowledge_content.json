@@ -1,0 +1,174 @@
+[
+  {
+    "id": "DIDS-001",
+    "title": "What is DIDS v2?",
+    "category": "Overview",
+    "content": "DIDS v2 is the next generation of the Data Integration Delivery Service supporting national collection ingestion, processing and delivery through the NDIT platform.",
+    "summary": "Overview of the DIDS v2 programme.",
+    "owner": "DIDS Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "dids",
+      "overview",
+      "programme"
+    ]
+  },
+
+  {
+    "id": "DIDS-002",
+    "title": "DIDS Problem Statement",
+    "category": "Problem Statement",
+    "content": "DIDS v2 exists to provide a scalable and governed approach for onboarding, processing and distributing nationally collected datasets within NDIT.",
+    "summary": "Background and rationale for DIDS.",
+    "owner": "DIDS Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "problem",
+      "business case",
+      "dids"
+    ]
+  },
+
+  {
+    "id": "DIDS-003",
+    "title": "DIDS Architecture Overview",
+    "category": "Architecture",
+    "content": "DIDS uses a staged data processing architecture supporting ingestion, validation, transformation and publication of datasets through NDIT services.",
+    "summary": "High level architecture.",
+    "owner": "Architecture Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "architecture",
+      "ingestion",
+      "processing"
+    ]
+  },
+
+  {
+    "id": "DIDS-004",
+    "title": "DIDS Onboarding Process",
+    "category": "Journey",
+    "content": "Onboarding a new DIDS dataset includes business approval, governance review, onboarding assessment, technical integration, testing and operational readiness.",
+    "summary": "How onboarding works.",
+    "owner": "DIDS Onboarding Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "onboarding",
+      "journey",
+      "dataset"
+    ]
+  },
+
+  {
+    "id": "DIDS-005",
+    "title": "DIDS Governance Requirements",
+    "category": "Governance",
+    "content": "Governance activities may include DSA, DPIA, Security Review, Design Authority review and onboarding assurance depending on the use case.",
+    "summary": "Governance controls used in DIDS.",
+    "owner": "Information Governance Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "governance",
+      "dsa",
+      "dpia",
+      "security"
+    ]
+  },
+
+  {
+    "id": "DIDS-006",
+    "title": "DIDS Risks",
+    "category": "Risk",
+    "content": "Key risks include platform readiness, governance approvals, onboarding lead times, data quality issues and service integration dependencies.",
+    "summary": "Current DIDS risks.",
+    "owner": "DIDS Delivery Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "risk",
+      "delivery",
+      "platform"
+    ]
+  },
+
+  {
+    "id": "DIDS-007",
+    "title": "DIDS Incident Management",
+    "category": "Support",
+    "content": "Operational incidents should be raised through the approved support route and escalated using the DIDS support model.",
+    "summary": "Incident and support guidance.",
+    "owner": "Platform Operations",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "incident",
+      "support",
+      "operations"
+    ]
+  },
+
+  {
+    "id": "DIDS-008",
+    "title": "DIDS Roles and Responsibilities",
+    "category": "Ownership",
+    "content": "Ownership is shared across product, engineering, governance and operational teams. Responsibilities vary depending on lifecycle stage and service usage.",
+    "summary": "Who does what in DIDS.",
+    "owner": "DIDS Leadership Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "roles",
+      "ownership",
+      "teams"
+    ]
+  },
+
+  {
+    "id": "DIDS-009",
+    "title": "DIDS Service Dependencies",
+    "category": "Architecture",
+    "content": "DIDS integrations may depend on Foundry, CRDL, MESH, PET and supporting NDIT services.",
+    "summary": "Key service dependencies.",
+    "owner": "Architecture Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "services",
+      "dependencies",
+      "foundry",
+      "crdl",
+      "mesh"
+    ]
+  },
+
+  {
+    "id": "DIDS-010",
+    "title": "DIDS Go Live Checklist",
+    "category": "Operations",
+    "content": "Go live activities include approvals, testing completion, governance sign-off, operational readiness review and support transition.",
+    "summary": "Checklist before production release.",
+    "owner": "DIDS Delivery Team",
+    "source": "Confluence",
+    "lastUpdated": "2026-11-24",
+    "version": "2.0",
+    "tags": [
+      "go live",
+      "release",
+      "operations"
+    ]
+  }
+]
