@@ -55,4 +55,11 @@
     "owner": "Primary Care Team",
     "domain": "Primary Care"
   }
+{
+  "id": "COL-009",
+  "name": "DIDS",
+  "description": "Data Integration Delivery Service supporting onboarding, processing and distribution of national datasets through NDIT services.",
+  "owner": "DIDS Team",
+  "domain": "Data Integration Delivery Service"
+}
 ]
