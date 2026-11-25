@@ -309,4 +309,103 @@
       "permission"
     ]
   }
+  ,
+{
+  "type": "Programme",
+  "title": "DIDS",
+  "source": "dids_knowledge_content",
+  "target": "DIDS",
+  "keywords": [
+    "dids",
+    "data integration delivery service",
+    "dids v2"
+  ]
+},
+{
+  "type": "Knowledge",
+  "title": "DIDS Overview",
+  "source": "dids_knowledge_content",
+  "target": "DIDS-KB-001",
+  "keywords": [
+    "dids",
+    "overview",
+    "programme",
+    "service"
+  ]
+},
+{
+  "type": "Knowledge",
+  "title": "DIDS Problem Statement",
+  "source": "dids_knowledge_content",
+  "target": "DIDS-KB-002",
+  "keywords": [
+    "dids",
+    "problem",
+    "business case",
+    "why"
+  ]
+},
+{
+  "type": "Knowledge",
+  "title": "DIDS Architecture",
+  "source": "dids_knowledge_content",
+  "target": "DIDS-KB-003",
+  "keywords": [
+    "dids",
+    "architecture",
+    "foundry",
+    "pet",
+    "integration"
+  ]
+},
+{
+  "type": "Knowledge",
+  "title": "DIDS Governance",
+  "source": "dids_knowledge_content",
+  "target": "DIDS-KB-004",
+  "keywords": [
+    "dids",
+    "governance",
+    "dpia",
+    "dsa",
+    "approval"
+  ]
+},
+{
+  "type": "Knowledge",
+  "title": "DIDS Risks",
+  "source": "dids_knowledge_content",
+  "target": "DIDS-KB-005",
+  "keywords": [
+    "dids",
+    "risk",
+    "dependency",
+    "issue"
+  ]
+},
+{
+  "type": "Knowledge",
+  "title": "DIDS Support Model",
+  "source": "dids_knowledge_content",
+  "target": "DIDS-KB-006",
+  "keywords": [
+    "dids",
+    "support",
+    "incident",
+    "service desk"
+  ]
+},
+{
+  "type": "Knowledge",
+  "title": "DIDS Ownership",
+  "source": "dids_knowledge_content",
+  "target": "DIDS-KB-007",
+  "keywords": [
+    "dids",
+    "owner",
+    "ownership",
+    "team",
+    "responsible"
+  ]
+}
 ]
